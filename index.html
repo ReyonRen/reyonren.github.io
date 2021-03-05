@@ -1,14 +1,375 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Ruiyang Ren's Homepage</title>
-    </head>
-    <body>
-        <h1>Ruiyang Ren</h1>
-        <h2>M.S. Candidate</h2>
-        <h3>School of Information, Renmin University of China</h3>
-        <p>The website is under development...</p>
-        <p>My <a href="http://rui-yang.ren/Ruiyang_Ren_CV.pdf">CV</a></p>
-    </body>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruiyang Ren's Homepage</title>
+  </head>
+  <style>
+    html {
+      font-size: 16px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .w {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    .sep {
+      border: 1px solid #999;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      transform: scaleY(0.5);
+    }
+
+    .links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: 0px 1px 10px #ccc;
+    }
+
+    .links .w {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 36px;
+      font-size: 16px;
+    }
+
+    .main {
+      position: fixed;
+      top: 36px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: auto;
+    }
+
+    .top {
+      display: flex;
+      width: 630px;
+      margin-bottom: 20px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top img {
+      width: 230px;
+    }
+
+    .top .info {
+      display: flex;
+      width: 380px;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .top .info .name {
+      font-family: Microsoft YaHei;
+      margin-bottom: 20px;
+    }
+
+    .top .info .identity {
+      margin-bottom: 20px;
+      padding-left: 90px;
+      font-size: 1.3em;
+    }
+
+    .table {
+      border-top: 0.5px solid #aaa;
+      padding-left: 0;
+      margin-bottom: 20px;
+      margin-top: 0;
+      margin-left: -5px;
+      font-size: 16px;
+    }
+
+    .table-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 8px;
+      border-bottom: 0.5px solid #aaa;
+      border-left: 0.5px solid #aaa;
+      border-right: 0.5px solid #aaa;
+      list-style: none;
+    }
+
+    .table .table-item .prop {
+      width: 70px;
+    }
+
+    .title {
+      margin-bottom: 8px;
+      margin-left: -5px;
+      padding-left: 5px;
+      background-color: royalblue;
+      color: #fff;
+    }
+
+    #awards ul,
+    #publications ul {
+      padding-left: 0;
+      margin-top: 0;
+    }
+
+    #services ul {
+      padding-left: 20px;
+    }
+
+    #awards ul li,
+    #publications ul li,
+    #services ul li {
+      display: flex;
+      padding: 5px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    #awards ul li::before,
+    #publications ul li::before,
+    #services ul li::before {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 5px;
+      margin-right: 15px;
+      background-color: #000;
+      border-radius: 50%;
+    }
+
+    #publications ul li::before {
+      margin-top: 8px;
+      align-self: flex-start;
+    }
+
+    #publications ul li div {
+      width: 90%;
+    }
+
+    #awards ul li span:nth-child(2) {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    #awards ul li span:nth-child(2) i {
+      font-style: normal;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #services h3 {
+      margin-bottom: 5px;
+    }
+
+    #services ul {
+      margin-top: 0;
+    }
+
+    #internships h4 {
+      display: flex;
+      margin-bottom: 5px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    #internships div div {
+      margin-bottom: 5px;
+    }
+
+    #correspondence,
+    #biography,
+    #publications,
+    #services,
+    #awards,
+    #internships {
+      padding-left: 5px;
+    }
+  </style>
+  <body>
+    <div class="links">
+      <div class="w">
+        <div>[<a href="#biography">Biography</a>]</div>
+        <div>[<a href="#publications">Publications</a>]</div>
+        <div>[<a href="#services">Services</a>]</div>
+        <div>[<a href="#awards">Awards</a>]</div>
+        <div>[<a href="#internships">Internships</a>]</div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="w">
+        <div class="top">
+          <img src="./ruiyang.png" alt="" />
+          <div class="info">
+            <h2 class="name">Ruiyang Ren&nbsp;&nbsp;任瑞阳</h2>
+            <h3 class="identity">M.S.&nbsp;Candidate</h3>
+            <a href="http://aibox.ruc.edu.cn/"
+              >Big Data and Analysis and Intelligence Lab</a
+            >
+            <a href="http://info.ruc.edu.cn/index.php"
+              >Big Data and Analysis and Intelligence Lab</a
+            >
+            <a href="http://ruc.edu.cn/">Renmin University of China</a>
+          </div>
+        </div>
+        <div id="correspondence">
+          <h2 class="title">Correspondence</h2>
+          <ul class="table">
+            <li class="table-item">
+              <div class="prop">Email:</div>
+              <div>
+                reyon.ren@ruc.edu.cn&nbsp;&nbsp;<a
+                  href="mailto:zhaoxi35@msu.edu"
+                  >[Contact me]</a
+                >
+              </div>
+            </li>
+            <li class="table-item">
+              <div class="prop">Office:</div>
+              Information Building 125, No. 59 Zhongguancun Street, Haidian
+              District, Beijing, 100872, China
+            </li>
+            <li class="table-item">
+              <div class="prop">Links:</div>
+              <a href=" https://scholar.google.com/citations?user=KpIEBYMAAAAJ"
+                ><strong>[Google Scholar]</strong></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div id="biography">
+          <h2 class="title">Biography</h2>
+          <p>My <a href="http://rui-yang.ren/Ruiyang_Ren_CV.pdf">CV</a></p>
+        </div>
+        <div id="publications">
+          <h2 class="title">Selected Publications</h2>
+          <h3>Preprints</h3>
+          <ul>
+            <li>
+              <div>
+                <strong>Ruiyang Ren</strong>, Shangwen Lv, Yingqi Qu, Jing Liu,
+                Wayne Xin Zhao, QiaoQiao She, Hua Wu, Haifeng Wang, Ji-Rong Wen,
+                <i
+                  >“Leveraging Passage-Centric Similarity Relation for Improving
+                  Dense Passage Retrieval”</i
+                >.
+              </div>
+            </li>
+          </ul>
+          <h3>Conference and Journal Papers</h3>
+          <ul>
+            <li>
+              <div>
+                Yingqi Qu, Yuchen Ding, Jing Liu, Kai Liu,
+                <strong>Ruiyang Ren</strong>, Wayne Xin Zhao, Daxiang Dong, Hua
+                Wu, Haifeng Wang,<i
+                  >“RocketQA: An Optimized Training Approach to Dense Passage
+                  Retrieval for OpenDomain Question Answering”</i
+                >, Annual Conference of the North American Chapter of the
+                Association for Computational Linguistics
+                <strong>(NAACL’2021)</strong>
+              </div>
+            </li>
+            <li>
+              <div>
+                Xiaolin Chen, Xuemeng Song, <strong>Ruiyang Ren</strong>, Lei
+                Zhu, Zhiyong Cheng, Liqiang Nie,<i
+                  >“Fine-Grained Privacy Detection with Graph-Regularized
+                  Hierarchical Attentive Representation Learning”</i
+                >, ACM Transactions on Information Systems
+                <strong>(TOIS)</strong>, 2020, Vol.38, No.4
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Ruiyang Ren</strong>, Zhaoyang Liu, Yaliang Li, Wayne
+                Xin Zhao, Hui Wang, Bolin Ding, Ji-Rong Wen,<i
+                  >“Sequential Recommendation with Self-Attentive
+                  Multi-Adversarial Network”</i
+                >, 43rd International ACM SIGIR Conference on Research and
+                Development in Information Retrieval
+                <strong>(SIGIR’2020)</strong>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div id="services">
+          <h2 class="title">Services</h2>
+          <h3>Conference Program Committee Member</h3>
+          <h3>Conference Volunteer</h3>
+          <ul>
+            <li>
+              ACM International Conference on Information and Knowledge
+              Management (CIKM) 2019
+            </li>
+          </ul>
+        </div>
+        <div id="awards">
+          <h2 class="title">Awards</h2>
+          <ul>
+            <li>
+              <span
+                >National Scholarship for Graduate Students of China (Highest
+                National Scholarship)</span
+              ><span><i>2020</i></span>
+            </li>
+            <li>
+              <span>SIGIR 2020 Student Travel Grant</span
+              ><span><i>2020</i></span>
+            </li>
+            <li>
+              <span>Graduate Student First-class Academic Scholarship</span
+              ><span><i>2020</i></span>
+            </li>
+            <li>
+              <span>Excellent student of Renmin University of China</span
+              ><span><i>2020</i></span>
+            </li>
+            <li>
+              <span
+                >First Prize of National Olympiad in Informatics in Provinces
+                (NOIP) in Hebei Province</span
+              ><span><i>2013</i></span>
+            </li>
+            <li>
+              <span>First Prize of Hebei Youth Accordion Competition</span
+              ><span><i>2011</i></span>
+            </li>
+          </ul>
+        </div>
+        <div id="internships">
+          <h2 class="title">Internships</h2>
+          <div>
+            <h4>
+              <span>May 2020 – Now - Mentor</span>
+              <span>NLP Department, Baidu</span>
+              <span>Baidu Research Intern</span>
+            </h4>
+            <div>
+              Worked on Dense Passage Retrieval in Open-domain Question
+              Answering
+            </div>
+            <div>The outcomes were published in NAACL’2021 and ACL’2021</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
