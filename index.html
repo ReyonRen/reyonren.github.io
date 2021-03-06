@@ -9,7 +9,7 @@
   <style>
     html {
       font-size: 16px;
-      -webkit-text-size-adjust:none;
+      -webkit-text-size-adjust: none;
     }
     h1,
     h2,
@@ -128,17 +128,17 @@
     }
 
     #awards ul,
-    #publications ul {
+    #publications ul,
+    #internships ul,
+    #services ul {
       padding-left: 0;
       margin-top: 0;
     }
 
-    #services ul {
-      padding-left: 20px;
-    }
-
     #awards ul li,
     #publications ul li,
+    #services ul li,
+    #internships ul li,
     #services ul li {
       display: flex;
       padding: 5px;
@@ -149,6 +149,8 @@
 
     #awards ul li::before,
     #publications ul li::before,
+    #services ul li::before,
+    #internships ul li::before,
     #services ul li::before {
       content: "";
       display: block;
@@ -159,12 +161,14 @@
       border-radius: 50%;
     }
 
-    #publications ul li::before {
+    #publications ul li::before,
+    #internships ul li::before {
       margin-top: 8px;
       align-self: flex-start;
     }
 
-    #publications ul li div {
+    #publications ul li div,
+    #internships ul li span {
       width: 90%;
     }
 
@@ -218,25 +222,23 @@
   <body>
     <div class="links">
       <div class="w">
-        <div>[<a href="#biography">Biography</a >]</div>
-        <div>[<a href="#publications">Publications</a >]</div>
-        <div>[<a href="#awards">Awards</a >]</div>
-        <div>[<a href="#internships">Internships</a >]</div>
-        <div>[<a href="#services">Services</a >]</div>
+        <div>[<a href=" ">Biography</a>]</div>
+        <div>[<a href="#publications">Publications</a>]</div>
+        <div>[<a href="#awards">Awards</a>]</div>
+        <div>[<a href="#internships">Internships</a>]</div>
+        <div>[<a href="#services">Services</a>]</div>
       </div>
     </div>
     <div class="main">
       <div class="w">
         <div class="top">
-          <img src="./self-photo.jpg" alt="" />
+          < img src="./self-photo.jpg" alt="" />
           <div class="info">
             <h2 class="name">Ruiyang Ren&nbsp;&nbsp;任瑞阳</h2>
             <h3 class="identity">M.S.&nbsp;Candidate</h3>
-            <a href="https://aibox.ruc.edu.cn/"
-              >AIBOX Group</a
-            >
+            <a href="https://aibox.ruc.edu.cn/">AIBOX Group</a>
             <a href="https://info.ruc.edu.cn/academic_research_lab.php?id=20"
-              >Big Data and Analysis and Intelligence Lab</a
+              >Big Data Analysis and Intelligence Lab</a
             >
             <a href="https://info.ruc.edu.cn/index.php"
               >School of Information</a
@@ -275,15 +277,31 @@
 
         <div id="biography">
           <h2 class="title">Biography</h2>
-            <p>Ruiyang Ren is a M.S. candidate of Big Data Science and Engineering at <a href="https://www.ruc.edu.cn/">Renmin University of China</a > (RUC). His supervisor is 
-              Prof. <a href="https://scholar.google.com/citations?user=tbxCHJgAAAAJ">Ji-Rong Wen</a > and <a href="http://aibox.ruc.edu.cn/batmanfly">Wayne Xin Zhao</a >. 
-              Prior to RUC, he completed his B.Eng at <a href="https://www.tsxt.sdu.edu.cn/">Taishan College</a>, <a href="https://www.sdu.edu.cn/">Shandong University</a> (2019).
-              His current research interests include natural language processing and machine learning.</p >
-          <p>My <a href="http://rui-yang.ren/Ruiyang_Ren_CV.pdf"><strong>[CV]</strong></a ></p >
+          <p>
+            Ruiyang Ren is a M.S. candidate of Big Data Science and Engineering
+            at
+            <a href="https://www.ruc.edu.cn/">Renmin University of China</a>
+            (RUC). His supervisor is Prof.
+            <a href="https://scholar.google.com/citations?user=tbxCHJgAAAAJ"
+              >Ji-Rong Wen</a
+            >
+            and <a href="http://aibox.ruc.edu.cn/batmanfly">Wayne Xin Zhao</a>.
+            Prior to RUC, he completed his B.Eng of Computer Science and Technology at
+            <a href="https://www.tsxt.sdu.edu.cn/">Taishan College</a>,
+            <a href="https://www.sdu.edu.cn/">Shandong University</a> (2019).
+            His current research interests include natural language processing
+            and machine learning.
+          </p>
+          <p>
+            My
+            <a href="http://rui-yang.ren/Ruiyang_Ren_CV.pdf"
+              ><strong>[CV]</strong></a
+            >
+          </p>
         </div>
         <div id="publications">
           <h2 class="title">Selected Publications</h2>
-<!--           <h3>Preprints</h3>
+          <!--           <h3>Preprints</h3>
           <ul>
             <li>
               <div>
@@ -338,29 +356,29 @@
           <ul>
             <li>
               <span
-                >2020, National Scholarship for Graduate Students of China (Highest
-                National Scholarship)</span
+                >2020, National Scholarship for Graduate Students of China
+                (Highest National Scholarship)</span
               >
             </li>
             <li>
-              <span>2020, SIGIR Student Travel Grant</span
-              >
-            </li>
-            <li>
-              <span>2020, Graduate Student First-class Academic Scholarship, Renmin University of China</span
-              >
-            </li>
-            <li>
-              <span>2020, Excellent student of Renmin University of China</span
-              >
+              <span>2020, SIGIR Student Travel Grant</span>
             </li>
             <li>
               <span
-                >2013, First Prize of National Olympiad in Informatics in Provinces
-                (NOIP) in Hebei Province</span
+                >2020, Graduate Student First-class Academic Scholarship, Renmin
+                University of China</span
               >
             </li>
-<!--             <li>
+            <li>
+              <span>2020, Excellent student of Renmin University of China</span>
+            </li>
+            <li>
+              <span
+                >2013, First Prize of National Olympiad in Informatics in
+                Provinces (NOIP) in Hebei Province</span
+              >
+            </li>
+            <!--             <li>
               <span>First Prize of Hebei Youth Accordion Competition</span
               ><span><i>2011</i></span>
             </li> -->
@@ -370,9 +388,13 @@
           <h2 class="title">Internships</h2>
           <div>
             <ul>
-            <li>
-              <span>2020 May–Now, <strong>Research Intern</strong>, Worked on Dense Passage Retrieval in Open-domain Question Answering, NLP Department@Baidu</span>
-            </li>
+              <li>
+                <span
+                  >2020 May–Now, <strong>Research Intern</strong>, Worked on
+                  Dense Passage Retrieval in Open-domain Question Answering, NLP
+                  Department@Baidu</span
+                >
+              </li>
             </ul>
           </div>
         </div>
