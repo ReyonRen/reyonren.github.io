@@ -44,21 +44,23 @@
     }
 
     .links {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      box-shadow: 0px 2px 10px #ccc;
-      z-index: 10;
+      /* position: fixed; */
+      /* top: 0; */
+      /* left: 0; */
+      /* box-shadow: 0px 2px 10px #ccc; */
+      /* z-index: 10; */
     }
 
-    .links .w {
+    .links .flex {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      width: 95%;
       height: 36px;
+      /* margin-left: -5px; */
       font-size: 16px;
+      margin-bottom: 16px;
     }
 
     .main {
@@ -137,10 +139,20 @@
     .title {
       margin-bottom: 8px;
       margin-left: -5px;
-      padding-left: 5px;
-      background-color: Firebrick;
+      /* padding-left: 5px; */
+      /* background-color: Firebrick; */
       font-size: 22px;
-      color: #fff;
+      color: #000;
+    }
+
+    .title::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      background-image: linear-gradient(to right, Firebrick, #f8f7fd);
     }
 
     #awards ul,
@@ -220,6 +232,7 @@
     }
 
     #correspondence,
+    #links,
     #biography,
     #publications,
     #services,
@@ -236,19 +249,10 @@
     }
   </style>
   <body>
-    <div class="links">
-      <div class="w">
-        <div>[<a href="#biography">Biography</a>]</div>
-        <div>[<a href="#publications">Publications</a>]</div>
-        <div>[<a href="#awards">Awards</a>]</div>
-        <div>[<a href="#internships">Internships</a>]</div>
-        <div>[<a href="#services">Services</a>]</div>
-      </div>
-    </div>
     <div class="main">
       <div class="w">
         <div class="top">
-          <img src="./self-photo.jpg" alt="" />
+          < img src="./self-photo.jpg" alt="" />
           <div class="info">
             <h2 class="name">
               Ruiyang Ren&nbsp;&nbsp;<span class="chinese">任瑞阳</span>
@@ -292,7 +296,16 @@
             </li>
           </ul>
         </div>
-
+        <div class="links" id="links">
+          <!-- <h2 class="title">Links</h2> -->
+          <div class="flex">
+            <div>[<a href=" ">Biography</a>]</div>
+            <div>[<a href="#publications">Publications</a>]</div>
+            <div>[<a href="#awards">Awards</a>]</div>
+            <div>[<a href="#internships">Internships</a>]</div>
+            <div>[<a href="#services">Services</a>]</div>
+          </div>
+        </div>
         <div id="biography">
           <h2 class="title">Biography</h2>
           <p>
@@ -409,8 +422,10 @@
             <ul>
               <li>
                 <span
-                  >2020.5 – Now, <strong>Research Intern, NLP Department, Baidu</strong><br/>
-                  Worked on Open Domain Question Answering with Dr. <a href="https://www.machinereading.ai/">Jing Liu</a></span
+                  >2020.5 – Now,
+                  <strong>Research Intern, NLP Department, Baidu</strong><br />
+                  Worked on Open Domain Question Answering with Dr.
+                  <a href="https://www.machinereading.ai/">Jing Liu</a></span
                 >
               </li>
             </ul>
@@ -420,9 +435,7 @@
           <h2 class="title">Services</h2>
           <h3>Conference Program Committee Member</h3>
           <ul>
-            <li>
-              2020, China Multimedia Conference (ChinaMM)
-            </li>
+            <li>2020, China Multimedia Conference (ChinaMM)</li>
           </ul>
           <h3>Conference Volunteer</h3>
           <ul>
