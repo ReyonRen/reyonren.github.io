@@ -26,7 +26,7 @@
     }
 
     .main {
-      background-color: Lavender;
+      /* background-color: Lavender; */
     }
 
     .w {
@@ -158,7 +158,8 @@
     #awards ul,
     #publications ul,
     #internships ul,
-    #services ul {
+    #services ul,
+    #friends ul {
       padding-left: 0;
       margin-top: 0;
     }
@@ -237,16 +238,53 @@
     #publications,
     #services,
     #awards,
-    #internships {
+    #internships,
+    #friends {
       padding-left: 5px;
     }
 
     .copyright {
-      margin-top: 40px;
+      /* margin-top: 40px; */
       font-size: 16px;
       text-align: center;
       color: #666;
     }
+
+    #friends ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    #friends ul li {
+      list-style: none;
+      flex-basis: 245px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      height: 40px;
+      background-color: #f4f4f4;
+    }
+
+    #friends ul li:hover {
+      background-color: #eee;
+    }
+
+    #friends ul li a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* padding-top: 10px; */
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: #000;
+    }
+
+    /* #friends ul li a::after {
+      content: "website";
+      font-size: 14px;
+    } */
   </style>
   <body>
     <div class="main">
@@ -347,7 +385,8 @@
                 <i
                   >“Leveraging Passage-Centric Similarity Relation for Improving
                   Dense Passage Retrieval”</i
-                >, Findings of Annual Meeting of the Association for Computational Linguistics
+                >, Findings of Annual Meeting of the Association for
+                Computational Linguistics
                 <strong>(ACL’2021 Findings)</strong>
               </div>
             </li>
@@ -361,10 +400,12 @@
                 >, Annual Conference of the North American Chapter of the
                 Association for Computational Linguistics
                 <strong>(NAACL’2021)</strong>
-<!--                 <a href=""
+                <!--                 <a href=""
                 ><strong>[Paper]</strong></a>  -->
-                <a href="https://github.com/PaddlePaddle/Research/tree/master/NLP/NAACL2021-RocketQA"
-                ><strong>[Code]</strong></a>
+                <a
+                  href="https://github.com/PaddlePaddle/Research/tree/master/NLP/NAACL2021-RocketQA"
+                  ><strong>[Code]</strong></a
+                >
               </div>
             </li>
             <li>
@@ -376,9 +417,11 @@
                 >, ACM Transactions on Information Systems
                 <strong>(TOIS)</strong>, 2020
                 <a href="https://dl.acm.org/doi/abs/10.1145/3406109"
-                ><strong>[Paper]</strong></a> 
+                  ><strong>[Paper]</strong></a
+                >
                 <a href="https://github.com/Fine-grainedPrivacyDetection/GrHA/"
-                ><strong>[Code]</strong></a>
+                  ><strong>[Code]</strong></a
+                >
               </div>
             </li>
             <li>
@@ -389,11 +432,13 @@
                   Multi-Adversarial Network”</i
                 >, 43rd International ACM SIGIR Conference on Research and
                 Development in Information Retrieval
-                <strong>(SIGIR’2020)</strong> 
+                <strong>(SIGIR’2020)</strong>
                 <a href="https://dl.acm.org/doi/10.1145/3397271.3401111"
-                ><strong>[Paper]</strong></a> 
+                  ><strong>[Paper]</strong></a
+                >
                 <a href="https://github.com/ReyonRen/MFGAN"
-                ><strong>[Code]</strong></a>
+                  ><strong>[Code]</strong></a
+                >
               </div>
             </li>
           </ul>
@@ -460,10 +505,22 @@
             </li>
           </ul>
         </div>
+        <div id="friends">
+          <h2 class="title">Friends</h2>
+          <ul>
+            <li><span></span><a href="https://luyu.blog/">Luyu Cheng</a></li>
+            <li>
+              <span></span><a href="https://richardhgl.github.io/">Gaole He</a>
+            </li>
+            <li>
+              <span></span><a href="https://yupenghou.com/">Yupeng Hou</a>
+            </li>
+            <li><span></span><a href="http://lijunyi.tech/">Junyi Li</a></li>
+            <li><span></span><a href="https://lancelot">Kun Zhou</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="copyright">
-        Copyright@2020-2021. All Rights Reserved.
-      </div>
+      <div class="copyright">Copyright@2020-2021. All Rights Reserved.</div>
     </div>
   </body>
 </html>
