@@ -65,10 +65,11 @@
 
     .main {
       position: fixed;
-      top: 36px;
+      top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      padding-top: 36px;
       padding-bottom: 20px;
       overflow: auto;
     }
@@ -142,6 +143,7 @@
       /* padding-left: 5px; */
       /* background-color: Firebrick; */
       font-size: 22px;
+      font-weight: bold;
       color: #000;
     }
 
@@ -159,7 +161,8 @@
     #publications ul,
     #internships ul,
     #services ul,
-    #friends ul {
+    #friends ul,
+    #teaching ul {
       padding-left: 0;
       margin-top: 0;
     }
@@ -168,7 +171,8 @@
     #publications ul li,
     #services ul li,
     #internships ul li,
-    #services ul li {
+    #services ul li,
+    #teaching ul li {
       display: flex;
       padding: 5px;
       flex-direction: row;
@@ -180,7 +184,8 @@
     #publications ul li::before,
     #services ul li::before,
     #internships ul li::before,
-    #services ul li::before {
+    #services ul li::before,
+    #teaching ul li::before {
       content: "";
       display: block;
       width: 5px;
@@ -191,7 +196,8 @@
     }
 
     #publications ul li::before,
-    #internships ul li::before {
+    #internships ul li::before,
+    #teaching ul li::before {
       margin-top: 8px;
       align-self: flex-start;
     }
@@ -239,7 +245,8 @@
     #services,
     #awards,
     #internships,
-    #friends {
+    #friends,
+    #teaching {
       padding-left: 5px;
     }
 
@@ -280,19 +287,6 @@
       text-align: center;
       color: #000;
     }
-
-    /* .clustrmaps-map,
-    .clustrmaps-map-container,
-    .clustrmaps-map svg {
-      width: 600px !important;
-      height: 290px !important;
-      margin: auto;
-    } */
-
-    /* #friends ul li a::after {
-      content: "website";
-      font-size: 14px;
-    } */
   </style>
   <body>
     <div class="main">
@@ -304,14 +298,14 @@
               Ruiyang Ren&nbsp;&nbsp;<span class="chinese">任瑞阳</span>
             </h2>
             <h3 class="identity">M.Eng. Graduate</h3>
-            <a href="https://aibox.ruc.edu.cn">AIBOX Group</a >
+            <a href="https://aibox.ruc.edu.cn">AIBOX Group</a>
             <a href="https://info.ruc.edu.cn/academic_research_lab.php?id=20"
               >Big Data Analysis and Intelligence Lab</a
             >
             <a href="https://info.ruc.edu.cn/index.php"
               >School of Information</a
             >
-            <a href="https://www.ruc.edu.cn/">Renmin University of China</a >
+            <a href="https://www.ruc.edu.cn/">Renmin University of China</a>
           </div>
         </div>
         <div id="correspondence">
@@ -349,12 +343,12 @@
         <div class="links" id="links">
           <!-- <h2 class="title">Links</h2> -->
           <div class="flex">
-            <div>[<a href=" ">Biography</a >]</div>
-            <div>[<a href="#publications">Selected Publications</a >]</div>
-            <div>[<a href="#awards">Selected Awards</a >]</div>
-            <div>[<a href="#internships">Internships</a >]</div>
-            <div>[<a href="#services">Services</a >]</div>
-            <div>[<a href="#friends">Friends</a >]</div>
+            <div>[<a href=" ">Biography</a>]</div>
+            <div>[<a href="#publications">Selected Publications</a>]</div>
+            <div>[<a href="#awards">Selected Awards</a>]</div>
+            <div>[<a href="#internships">Internships</a>]</div>
+            <div>[<a href="#services">Services</a>]</div>
+            <div>[<a href="#friends">Friends</a>]</div>
           </div>
         </div>
         <div id="biography">
@@ -362,26 +356,26 @@
           <p>
             Ruiyang Ren is an M.Eng. graduate of Big Data Science and
             Engineering at
-            <a href="https://www.ruc.edu.cn/">Renmin University of China</a >
+            <a href="https://www.ruc.edu.cn/">Renmin University of China</a>
             (RUC). His supervisor is Prof.
             <a href="https://scholar.google.com/citations?user=tbxCHJgAAAAJ"
               >Ji-Rong Wen</a
             >
-            and <a href="http://aibox.ruc.edu.cn/batmanfly">Wayne Xin Zhao</a >.
+            and <a href="http://aibox.ruc.edu.cn/batmanfly">Wayne Xin Zhao</a>.
             Prior to RUC, he completed his B.Eng. of Computer Science and
             Technology at
-            <a href="https://www.tsxt.sdu.edu.cn/">Taishan College</a >,
-            <a href="https://www.sdu.edu.cn/">Shandong University</a > (2019).
+            <a href="https://www.tsxt.sdu.edu.cn/">Taishan College</a>,
+            <a href="https://www.sdu.edu.cn/">Shandong University</a> (2019).
             His current research interests include natural language processing
             and information retrieval.
-          </p >
+          </p>
           <p>
             My
             <a href="http://rui-yang.ren/Ruiyang_Ren_CV.pdf"
               ><strong>[CV]</strong></a
             >
             (updated in June 2021)
-          </p >
+          </p>
         </div>
         <div id="publications">
           <h2 class="title">Selected Publications</h2>
@@ -393,8 +387,9 @@
           <ul>
             <li>
               <div>
-                <strong>Ruiyang Ren</strong>, Shangwen Lv, Yingqi Qu, Jing Liu, 
-                Wayne Xin Zhao, Qiaoqiao She, Hua Wu, Haifeng Wang and Ji-Rong Wen,
+                <strong>Ruiyang Ren</strong>, Shangwen Lv, Yingqi Qu, Jing Liu,
+                Wayne Xin Zhao, Qiaoqiao She, Hua Wu, Haifeng Wang and Ji-Rong
+                Wen,
                 <i
                   >“PAIR: Leveraging Passage-Centric Similarity Relation for
                   Improving Dense Passage Retrieval”</i
@@ -500,7 +495,7 @@
                   >2020.5 – Now,
                   <strong>Research Intern, NLP Department, Baidu</strong><br />
                   Worked on Open Domain Question Answering with Dr.
-                  <a href="https://www.machinereading.ai/">Jing Liu</a ></span
+                  <a href="https://www.machinereading.ai/">Jing Liu</a></span
                 >
               </li>
             </ul>
@@ -520,24 +515,41 @@
             </li>
           </ul>
         </div>
+        <div id="teaching">
+          <div class="title">Teaching</div>
+          <ul>
+            <li>
+              2021 Spring, Teaching Assistant, Information Technology
+              Fundamentals (for graduate students in RUC)
+            </li>
+            <li>
+              2020 Fall, Teaching Assistant, Statistical Product and Service
+              Solutions Application (for graduate students in RUC)
+            </li>
+            <li>
+              2020 Spring, Teaching Assistant, Information Technology
+              Fundamentals (for graduate students in RUC)
+            </li>
+          </ul>
+        </div>
         <div id="friends">
           <h2 class="title">Friends</h2>
           <ul>
             <li>
               <span></span
-              ><a href="http://www.cs.toronto.edu/~drchao/">Daren Chao</a >
+              ><a href="http://www.cs.toronto.edu/~drchao/">Daren Chao</a>
             </li>
-            <li><span></span><a href="https://luyu.blog/">Luyu Cheng</a ></li>
+            <li><span></span><a href="https://luyu.blog/">Luyu Cheng</a></li>
             <li>
-              <span></span><a href="https://talegqz.github.io">Qingzhe Gao</a >
-            </li>
-            <li>
-              <span></span><a href="https://richardhgl.github.io/">Gaole He</a >
+              <span></span><a href="https://talegqz.github.io">Qingzhe Gao</a>
             </li>
             <li>
-              <span></span><a href="https://yupenghou.com/">Yupeng Hou</a >
+              <span></span><a href="https://richardhgl.github.io/">Gaole He</a>
             </li>
-            <li><span></span><a href="http://lijunyi.tech/">Junyi Li</a ></li>
+            <li>
+              <span></span><a href="https://yupenghou.com/">Yupeng Hou</a>
+            </li>
+            <li><span></span><a href="http://lijunyi.tech/">Junyi Li</a></li>
             <li>
               <span></span
               ><a href="https://lancelot39.github.io/kunzhou.github.io/"
@@ -556,8 +568,8 @@
         ><img
           src="//www.clustrmaps.com/map_v2.png?d=WiSG1pQe4ZW9IKghH4_0rGXtCbucPt0QR4qAjyprFCI&cl=ffffff"
           style="display: block; margin: 40px auto"
-      /></a >
-<!--       <a href="https://clustrmaps.com/site/1bie0"  title="Visit tracker">
+      /></a>
+      <!--       <a href="https://clustrmaps.com/site/1bie0"  title="Visit tracker">
         <img src="//www.clustrmaps.com/map_v2.png?d=WiSG1pQe4ZW9IKghH4_0rGXtCbucPt0QR4qAjyprFCI&cl=ffffff" /></a> -->
       <div class="copyright">Copyright@2020-2021. All Rights Reserved.</div>
     </div>
