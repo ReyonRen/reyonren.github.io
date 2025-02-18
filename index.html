@@ -1,778 +1,417 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ruiyang Ren (任瑞阳)'s Homepage</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruiyang Ren's Homepage</title>
   <style>
-    html {
-      font-size: 16px;
-      line-height: 1.428571429;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      -webkit-text-size-adjust: none;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 0;
-      padding: 0;
-    }
+    /* 基本样式 */
+body {
+  font-family: 'Poppins', 'Microsoft YaHei', 'PingFang', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
 
-    a {
-      text-decoration: none;
-    }
+/* 导航栏 */
+nav {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 20px; /* 添加此行来增加导航栏下方的间距 */
+}
 
-    .main {
-      /* background-color: Lavender; */
-    }
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-    .w {
-      width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-      background-color: #fff;
-    }
+nav ul li {
+  margin: 0 20px;
+}
 
-    .sep {
-      border: 1px solid #999;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      transform: scaleY(0.5);
-    }
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
 
-    .links {
-      /* position: fixed; */
-      /* top: 0; */
-      /* left: 0; */
-      /* box-shadow: 0px 2px 10px #ccc; */
-      /* z-index: 10; */
-    }
+nav ul li a:hover {
+  color: #f39c12;
+}
 
-    .links .flex {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 95%;
-      height: 36px;
-      /* margin-left: -5px; */
-      font-size: 16px;
-      margin-bottom: 16px;
-    }
+/* 主页内容 */
+.main {
+  margin-top: 120px;
+  padding: 50px 20px;
+  background-color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .main {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding-top: 36px;
-      padding-bottom: 20px;
-      overflow: auto;
-    }
+/* 顶部个人信息 */
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 
-    .main .w {
-      padding-bottom: 20px;
-    }
+.top img {
+  width: 250px;
+  height: auto; /* 保持图片比例 */
+  object-fit: contain;  /* 保持原始比例 */
+  border-radius: 0; /* 移除圆形边框 */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
 
-    .top {
-      display: flex;
-      width: 630px;
-      margin-bottom: 20px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
+.top .info {
+  flex: 1;
+  padding-left: 20px;
+}
 
-    .top img {
-      width: 230px;
-    }
+.top .info h2 {
+  font-size: 30px;
+  color: #2a2a2a;
+  font-weight: bold;
+  margin: 0;
+}
 
-    .top .info {
-      display: flex;
-      width: 380px;
-      flex-direction: column;
-      align-items: stretch;
-    }
+.top .info h3 {
+  font-size: 20px;
+  color: #7f8c8d;
+  margin: 5px 0;
+}
 
-    .top .info .name {
-      /* font-family: Microsoft YaHei; */
-      margin-bottom: 20px;
-    }
+.top .info .chinese-name {
+  font-size: 22px;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
 
-    .top .info .name .chinese {
-      font-family: STKaiti, KaiTi;
-    }
+.top .info a {
+  display: block;
+  margin: 5px 0;
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
-    .top .info .identity {
-      margin-bottom: 20px;
-      padding-left: 60px;
-      font-size: 1.3em;
-    }
+.top .info a:hover {
+  color: #f39c12;
+}
 
-    .table {
-      border-top: 0.5px solid #aaa;
-      padding-left: 0;
-      margin-bottom: 20px;
-      margin-top: 0;
-      margin-left: -5px;
-      font-size: 16px;
-    }
+/* 内容卡片 */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+}
 
-    .table-item {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 8px;
-      border-bottom: 0.5px solid #aaa;
-      border-left: 0.5px solid #aaa;
-      border-right: 0.5px solid #aaa;
-      list-style: none;
-    }
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
 
-    .table .table-item .prop {
-      width: 70px;
-    }
+/* 表格 */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-    .title {
-      margin-bottom: 8px;
-      margin-left: -5px;
-      /* padding-left: 5px; */
-      /* background-color: Firebrick; */
-      font-size: 22px;
-      /* font-weight: bold; */
-      font-weight: 500;
-      color: #000;
-    }
+.table td, .table th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
 
-    .title::after {
-      content: "";
-      display: block;
-      height: 2px;
-      width: 100%;
-      margin-top: 5px;
-      margin-bottom: 10px;
-      background-image: linear-gradient(to right, Firebrick, #f8f7fd);
-    }
+/* 小屏幕优化 */
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #awards ul,
-    #publications ul,
-    #experiences ul,
-    #services ul,
-/*     #friends ul, */
-    #teaching ul {
-      padding-left: 0;
-      margin-top: 0;
-    }
+  .top .info {
+    padding-left: 0;
+    text-align: center;
+  }
 
-    #awards ul li,
-    #publications ul li,
-    #services ul li,
-    #experiences ul li,
-    #services ul li,
-    #teaching ul li {
-      display: flex;
-      padding: 5px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-    }
+  .top img {
+    width: 150px;
+  }
 
-    #awards ul li::before,
-    #publications ul li::before,
-    #services ul li::before,
-    #experiences ul li::before,
-    #services ul li::before,
-    #teaching ul li::before {
-      content: "";
-      display: block;
-      width: 5px;
-      height: 5px;
-      margin-right: 15px;
-      background-color: #000;
-      border-radius: 50%;
-    }
+  nav ul {
+    flex-direction: column;
+  }
+}
 
-    #publications ul li::before,
-    #experiences ul li::before,
-    #teaching ul li::before {
-      margin-top: 8px;
-      align-self: flex-start;
-    }
+/* 新增：去除链接下划线 */
+/* 设置未点击的链接颜色 */
+/* 通用链接样式 */
+.card a {
+  color: #2980b9; /* 其他链接保持蓝色 */
+  text-decoration: none;
+}
 
-    #publications ul li div,
-    #experiences ul li span {
-      flex: 1;
-    }
+/* 已访问链接 */
+.card a:visited {
+  color: #2980b9; /* 保持蓝色 */
+  text-decoration: none;
+}
 
-    #awards ul li span:nth-child(2) {
-      display: flex;
-      flex: 1;
-      flex-direction: row;
-      justify-content: flex-end;
-    }
+/* 悬停样式 */
+.card a:hover {
+  color: #f39c12; /* 悬停时变为橙色 */
+  text-decoration: underline;
+}
 
-    #awards ul li span:nth-child(2) i {
-      font-style: normal;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+/* 导航栏悬停样式 */
+nav a:hover {
+  color: #f39c12; /* 导航栏悬停时变为橙色 */
+  text-decoration: none; /* 导航栏悬停时无下划线 */
+}
 
-    #services h3 {
-      margin-bottom: 5px;
-    }
-
-    #services ul {
-      margin-top: 0;
-    }
-
-    #experiences h4 {
-      display: flex;
-      margin-bottom: 5px;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    #experiences div div {
-      margin-bottom: 5px;
-    }
-
-    #correspondence,
-    #links,
-    #biography,
-    #publications,
-    #services,
-    #awards,
-    #experiences,
-/*     #friends, */
-    #teaching {
-      padding-left: 5px;
-    }
-
-    .copyright {
-      /* margin-top: 40px; */
-      font-size: 16px;
-      text-align: center;
-      color: #666;
-    }
-
-/*     #friends ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-
-    #friends ul li {
-      list-style: none;
-      flex-basis: 175px;
-      margin-right: 20px;
-      margin-bottom: 20px;
-      height: 40px;
-      background-color: #f4f4f4;
-    }
-
-    #friends ul li:hover {
-      background-color: #eee;
-    }
-
-    #friends ul li a {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      /* padding-top: 10px; */
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      color: #000; */
-    }
   </style>
-  <body>
-    <div class="main">
-      <div class="w">
-        <div class="top">
-          <img src="./self-photo.jpg" alt="" />
-          <div class="info">
-            <h2 class="name" style="font-weight: 500">
-              Ruiyang Ren&nbsp;&nbsp;<span
-                class="chinese"
-                style="font-weight: 500"
-                >任瑞阳</span
-              >
-            </h2>
-            <h3 class="identity" style="font-weight: 500">Ph.D. Candidate</h3>
-            <a href="https://aibox.ruc.edu.cn">AIBOX Group</a>
-            <a href="http://ai.ruc.edu.cn/english/index.htm">Gaoling School of Artificial Intellegence</a>
-            <a href="https://www.ruc.edu.cn/">Renmin University of China</a>
-          </div>
-        </div>
-        <div id="correspondence">
-          <h2 class="title">Correspondence</h2>
-          <ul class="table">
-            <li class="table-item">
-              <div class="prop">Email:</div>
-              <div>
-                reyon.ren [at] ruc (dot) edu (dot) cn&nbsp;&nbsp;<a
-                  href="mailto:reyon.ren@ruc.edu.cn"
-                  >[Contact me]</a
-                >
-              </div>
-            </li>
-            <li class="table-item">
-              <div class="prop">Office:</div>
-              Lide Building 1808, No. 59 Zhongguancun Street, Haidian
-              District, Beijing, 100872, China
-            </li>
-            <li class="table-item">
-              <div class="prop">Links:</div>
-              <a href="https://scholar.google.com/citations?user=KpIEBYMAAAAJ"
-                ><strong>[Google Scholar]</strong></a
-              >&nbsp;&nbsp;&nbsp;
-              <a href="https://dblp.uni-trier.de/pid/265/6402.html"
-                ><strong>[DBLP]</strong></a
-              >&nbsp;&nbsp;&nbsp;
-              <a
-                href="https://www.semanticscholar.org/author/Ruiyang-Ren/1708171825"
-                ><strong>[Semantic Scholar]</strong></a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="links" id="links">
-          <!-- <h2 class="title">Links</h2> -->
-          <div class="flex">
-            <div>[<a href="#Biography">Biography</a>]</div>
-            <div>[<a href="#publications">Publications</a>]</div>
-            <div>[<a href="#awards">Selected Awards</a>]</div>
-            <div>[<a href="#experiences">Experiences</a>]</div>
-            <div>[<a href="#services">Services</a>]</div>
-            <div>[<a href="#teaching">Teaching</a>]</div>
-<!--             <div>[<a href="#friends">Friends</a>]</div> -->
-          </div>
-        </div>
-        <div id="biography">
-          <h2 class="title">Biography</h2>
-          <p>
-            Ruiyang Ren is a 3rd-year Ph.D. student of Artificial intelligence
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <ul>
+      <li><a href="https://rui-yang.ren">Ruiyang Ren</a></li>
+      <li><a href="#biography">Biography</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主页内容 -->
+  <div class="main">
+    <br>
+    <!-- 个人信息 -->
+    <div class="top">
+      <img src="./self-photo.jpg" alt="Ruiyang Ren" />
+      <div class="info">
+        <h2>Ruiyang Ren</h2>
+        <p class="chinese-name">任瑞阳</p>
+        <h3>Ph.D. Candidate</h3>
+        <a href="https://aibox.ruc.edu.cn">AIBOX Group</a>
+        <a href="http://ai.ruc.edu.cn/english/index.htm">Gaoling School of Artificial Intellegence</a>
+        <a href="https://www.ruc.edu.cn/">Renmin University of China</a>
+      </div>
+    </div>
+
+    <!-- 传记 -->
+    <div id="biography" class="card">
+      <h3>Biography</h3>
+      <p>
+        Ruiyang Ren is a 3rd-year Ph.D. student in Artificial intelligence
             at <a href="https://ai.ruc.edu.cn/">Gaoling School of Artificial Intellegence</a>,
             <a href="https://www.ruc.edu.cn/">Renmin University of China</a>
             (RUC). His supervisor is Prof.
             <a href="http://aibox.ruc.edu.cn/batmanfly">Wayne Xin Zhao</a>.
-            He completed his M.S. at <a href="https://info.ruc.edu.cn/">School of Information</a>, RUC (2022) supervised by Prof. 
-            <a href="https://gsai.ruc.edu.cn/jrwen">Ji-Rong Wen</a> and <a href="http://aibox.ruc.edu.cn/batmanfly">Wayne Xin Zhao</a>, and B.S. of Computer Science and
+            He completed his M.E. at RUC (2022), supervised by Prof. 
+            <a href="https://gsai.ruc.edu.cn/jrwen">Ji-Rong Wen</a> and <a href="http://aibox.ruc.edu.cn/batmanfly">Wayne Xin Zhao</a>, and B.E. of Computer Science and
             Technology at
             <a href="https://www.tsxt.sdu.edu.cn/">Taishan College</a>,
             <a href="https://www.sdu.edu.cn/">Shandong University</a> (2019) supervised by Prof. 
             <a href="https://xuemengsong.github.io/">Xuemeng Song</a> and <a href="https://liqiangnie.github.io/index.html">Liqiang Nie</a>.
-            His current research interests include natural language processing
-            and information retrieval.
-          </p>
-          <p>
-            My
-            <a href="http://rui-yang.ren/CV.pdf">[CV]</a>
-            (updated in Dec 2021)
-          </p>
-        </div>
-        <div id="publications">
-          <h2 class="title">Publications</h2>
-          <!--           <h3>Preprints</h3>
-          <ul>
-            
-          </ul> -->
-          <h3>Conference and Journal Papers</h3>
-          <ul>
-            <li>
-              <div>
-                <a href="https://arxiv.org/pdf/2412.12881"
-                  ><strong>RAG-Star: Enhancing Deliberative Reasoning with Retrieval Augmented Verification and Refinement</strong></a
-                ><br />
-                Jinhao Jiang, Jiayi Chen, Junyi Li, <strong>Ruiyang Ren</strong>, Shijie Wang, Wayne Xin Zhao, Yang Song and Tao Zhang
-                <br />
-                <i>
-                  <i>Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics
-                    <strong>(NAACL 2025)</strong></i>
-                </i>
-              </div>
-            </li> 
-            <li>
-              <div>
-                <a href="https://arxiv.org/pdf/2411.04602.pdf"
-                  ><strong>Self-Calibrated Listwise Reranking with Large Language Models</strong></a
-                ><br />
-                <strong>Ruiyang Ren*</strong>, Yuhao Wang*, Kun Zhou, Wayne Xin Zhao, Wenjie Wang, Jing Liu, Ji-Rong Wen and Tat-Seng Chua
-                <br />
-                <i>
-                  <i>The Web Conference
-                    <strong>(WWW 2025)</strong></i>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://aclanthology.org/2025.coling-main.250/"
-                  ><strong>Investigating the Factual Knowledge Boundary of Large Language Models with Retrieval Augmentation</strong></a
-                ><br />
-                <strong>Ruiyang Ren*</strong>, Yuhao Wang*, Yingqi Qu, Wayne Xin Zhao, Jing Liu, Hao Tian, Hua Wu, Ji-Rong Wen and Haifeng Wang
-                <br />
-                <i>
-                  <i>
-                    The 31st International Conference on Computational Linguistics
-                    <strong>(COLING 2025)</strong></i>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://aclanthology.org/2024.emnlp-main.321.pdf"
-                  ><strong>REAR: A Relevance-Aware Retrieval-Augmented Framework for Open-domain Question Answering</strong></a
-                ><br />
-                Yuhao Wang*, <strong>Ruiyang Ren*</strong>, Junyi Li, Wayne Xin Zhao, Jing Liu and Ji-Rong Wen
-                <br />
-                <i>
-                  <i>
-                    The 2024 Conference on Empirical Methods in Natural Language Processing
-                    <strong>(EMNLP 2024)</strong></i>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://aclanthology.org/2024.findings-emnlp.50.pdf"
-                  ><strong>BASES: Large-scale Web Search User Simulation with Large Language Model based Agents</strong></a
-                ><br />
-                <strong>Ruiyang Ren</strong>, Peng Qiu, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Hua Wu, Ji-Rong Wen and Haifeng Wang
-                <br />
-                <i>
-                  <i>
-                    Findings of the 2024 Conference on Empirical Methods in Natural Language Processing
-                    <strong>(Findings of EMNLP 2024)</strong></i>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://arxiv.org/pdf/2401.03205.pdf"
-                  ><strong>The Dawn After the Dark: An Empirical Study on Factuality Hallucination in Large Language Models</strong></a
-                ><br />
-                Junyi Li, Jie Chen, <strong>Ruiyang Ren</strong>, Xiaoxue Cheng, Wayne Xin Zhao, Jian-Yun Nie and Ji-Rong Wen
-                <br />
-                <i>               
-                  Annual Meeting of the Association for Computational Linguistics
-                  <strong>(ACL 2024)</strong>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://arxiv.org/pdf/2211.14876.pdf"
-                  ><strong>Dense Text Retrieval based on Pretrained Language Models: A Survey</strong></a
-                ><br />
-                Wayne Xin Zhao, Jing Liu, <strong>Ruiyang Ren</strong> and Ji-Rong Wen
-                <br />
-                <i>
-                  ACM Transactions on Information Systems
-                  <strong>(TOIS 2024)</strong>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://arxiv.org/pdf/2204.12755.pdf"
-                  ><strong>A Thorough Examination on Zero-shot Dense Retrieval</strong></a
-                ><br />
-                <strong>Ruiyang Ren</strong>, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Qifei Wu,
-                Yuchen Ding, Hua Wu, Haifeng Wang and Ji-Rong Wen
-                <br />
-                <i>
-                  Findings of the 2023 Conference on Empirical Methods in Natural Language Processing
-                  <strong>(Findings of EMNLP 2023)</strong>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://aclanthology.org/2023.acl-long.336.pdf">
-                  <strong>TOME: A Two-stage Approach for Model-based Retrieval</strong>
-                </a>
-                <br />
-                <strong>Ruiyang Ren</strong>, Wayne Xin Zhao, Jing Liu,
-                Hua Wu, Ji-Rong Wen and Haifeng Wang 
-                <br />
-                <i>
-                  Annual Meeting of the Association for Computational Linguistics
-                  <strong>(ACL 2023)</strong>
-                </i>
-               
-               
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://aclanthology.org/2021.emnlp-main.224.pdf"
-                  ><strong>RocketQAv2: A Joint Training Method for Dense Passage Retrieval and Passage Re-ranking</strong></a
-                ><br />
-                <strong>Ruiyang Ren*</strong>, Yingqi Qu*, Jing Liu,
-                Wayne Xin Zhao, Qiaoqiao She, Hua Wu, Haifeng Wang and Ji-Rong
-                Wen
-                <br />
-                <i>
-                  The 2021 Conference on Empirical Methods in Natural Language Processing
-                  <strong>(EMNLP 2021)</strong>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://aclanthology.org/2021.findings-acl.191.pdf"
-                  ><strong>PAIR: Leveraging Passage-Centric Similarity Relation for
-                  Improving Dense Passage Retrieval</strong></a
-                ><br />
-                <strong>Ruiyang Ren*</strong>, Shangwen Lv*, Yingqi Qu, Jing Liu,
-                Wayne Xin Zhao, Qiaoqiao She, Hua Wu, Haifeng Wang and Ji-Rong
-                Wen
-                <br />
-                <i>
-                  Findings of Annual Meeting of the Association for
-                  Computational Linguistics
-                  <strong>(Findings of ACL 2021)</strong>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a
-                  href="https://www.aclweb.org/anthology/2021.naacl-main.466.pdf"
-                  ><strong>RocketQA: An Optimized Training Approach to Dense Passage
-                  Retrieval for Open-Domain Question Answering</strong></a
-                >
-                <br />
-                Yingqi Qu, Yuchen Ding, Jing Liu, Kai Liu,
-                <strong>Ruiyang Ren</strong>, Wayne Xin Zhao, Daxiang Dong, Hua
-                Wu and Haifeng Wang
-                <br />
-                <i>
-                  Annual Conference of the North American Chapter of the
-                  Association for Computational Linguistics
-                  <strong>(NAACL 2021)</strong>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://dl.acm.org/doi/pdf/10.1145/3406109"
-                  ><strong>Fine-Grained Privacy Detection with Graph-Regularized
-                  Hierarchical Attentive Representation Learning</strong></a
-                >
-                <br />
-                Xiaolin Chen, Xuemeng Song, <strong>Ruiyang Ren</strong>, Lei
-                Zhu, Zhiyong Cheng and Liqiang Nie
-                <br />
-                <i>
-                  ACM Transactions on Information Systems
-                  <strong>(TOIS 2020)</strong>
-                </i>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="https://dl.acm.org/doi/pdf/10.1145/3397271.3401111"
-                  ><strong>Sequential Recommendation with Self-Attentive
-                  Multi-Adversarial Network</strong></a
-                >
-                <br />
-                <strong>Ruiyang Ren</strong>, Zhaoyang Liu, Yaliang Li, Wayne
-                Xin Zhao, Hui Wang, Bolin Ding and Ji-Rong Wen
-                <br />
-                <i>
-                  43rd International ACM SIGIR Conference on Research and
-                  Development in Information Retrieval
-                  <strong>(SIGIR 2020)</strong>
-                </i>
-              </div>
-            </li>
-          </ul>
-          <h3>Preprints</h3>
-          <ul>
-             <li>
-              <div>
-                <a href="https://arxiv.org/pdf/2502.04751"
-                  ><strong>Holistically Guided Monte Carlo Tree Search for Intricate Information Seeking</strong></a
-                ><br />
-                <strong>Ruiyang Ren*</strong>, Yuhao Wang*, Junyi Li*, Jinhao Jiang, Wayne Xin Zhao, Wenjie Wang, Tat-Seng Chua
-                <br />
-                <i>
-                  <i>arXiv 2025</i>
-                </i>
-              </div>
-            </li>
-             <li>
-              <div>
-                <a href="https://arxiv.org/pdf/2303.18223.pdf"
-                  ><strong>A Survey of Large Language Models</strong></a
-                ><br />
-                Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, 
-                Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, <strong>Ruiyang Ren</strong>, 
-                  Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie and Ji-Rong Wen
-                <br />
-                <i>
-                  <i>arXiv 2023</i>
-                </i>
-              </div>
-            </li>
-            <i>
-              * Equal Contribution
-            </i>
-            
-          </ul>
-        </div>
-        <div id="awards">
-          <h2 class="title">Selected Awards</h2>
-          <ul>
-            <li>
-              <span
-                >2023, Outstanding Innovative Talents Cultivation Funded Programs, Renmin University of China</span
-              >
-            </li>                
-            <li>
-              <span
-                >2021, Academic Rising Star candidate, Renmin University of China</span
-              >
-            </li>
-            <li>
-              <span
-                >2020, National Scholarship for Graduate Students of China
-                (Highest National Scholarship)</span
-              >
-            </li>
-            <li>
-              <span>2020, SIGIR Student Travel Grant</span>
-            </li>
-            <li>
-              <span
-                >2020,2021, Graduate Student First-class Academic Scholarship, Renmin
-                University of China</span
-              >
-            </li>
-            <li>
-              <span>2020,2021, Merit Student, Renmin University of China</span>
-            </li>
-            <li>
-              <span
-                >2013, First Prize of National Olympiad in Informatics in
-                Provinces (NOIP) in Hebei Province</span
-              >
-            </li>
-            <!--             <li>
-              <span>First Prize of Hebei Youth Accordion Competition</span
-              ><span><i>2011</i></span>
-            </li> -->
-          </ul>
-        </div>
-        <div id="experiences">
-          <h2 class="title">Experiences</h2>
-          <div>
-            <ul>
-              <li>
-                <span
-                  >
-                  Visiting Student, NExT++ Research Centre, <strong>National University of Singapore</strong>, Jul 2024 – Now<br />
-                  Working with Prof. 
-                  <a href="https://www.chuatatseng.com/">Tat-Seng Chua</a></span
-                >
-              </li>
-              <li>
-                <span
-                  >
-                  Research Intern, NLP Department, <strong>Baidu</strong>, May 2020 - Jul 2024<br />
-                  Worked with Dr.
-                  <a href="https://www.machinereading.ai/">Jing Liu</a></span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div id="services">
-          <h2 class="title">Services</h2>
-          <h3>Area Chair</h3>
-          <ul>
-            <li>ARR 2025 February</li>
-          </ul>
-          <h3>Program Committee Member/Reviewer</h3>
-          <ul>
-            <li>ACL, SIGIR, SIGKDD, WWW, TOIS, EMNLP, WSDM, CIKM, COLING, TMM, TCSVT, TALLIP</li>
-          </ul>
-          <h3>Conference Volunteer</h3>
-          <ul>
-            <li>
-              2019, ACM International Conference on Information and Knowledge
-              Management (CIKM)
-            </li>
-          </ul>
-        </div>
-        <div id="teaching">
-          <div class="title">Teaching</div>
-          <ul>
-          	<li>
-              2020,2021 Fall, Teaching Assistant, Statistical Product and Service
-              Solutions Application (for undergraduate students in RUC)
-            </li>
-            <li>
-              2020,2021 Spring, Teaching Assistant, Information Technology
-              Fundamentals (for undergraduate students in RUC)
-            </li>
-           
-          </ul>
-        </div>
-<!--         <div id="friends">
-          <h2 class="title">Friends</h2>
-          <ul>
-            <li>
-              <span></span
-              ><a href="http://www.cs.toronto.edu/~drchao/">Daren Chao</a>
-            </li>
-            <li><span></span><a href="https://luyu.blog/">Luyu Cheng</a></li>
-            <li>
-              <span></span><a href="https://talegqz.github.io">Qingzhe Gao</a>
-            </li>
-            <li>
-              <span></span><a href="https://richardhgl.github.io/">Gaole He</a>
-            </li>
-            <li>
-              <span></span><a href="https://yupenghou.com/">Yupeng Hou</a>
-            </li>
-            <li><span></span><a href="http://lijunyi.tech/">Junyi Li</a></li>
-            <li>
-              <span></span
-              ><a href="https://peiyuliu.tech/"
-                >Peiyu Liu</a>
-            </li>
-            <li>
-              <span></span
-              ><a href="https://lancelot39.github.io/kunzhou.github.io/"
-                >Kun Zhou</a
-              >
-            </li>
-
-          </ul>
-        </div> -->
-      </div>
-      <!-- <script
-        type="text/javascript"
-        id="clustrmaps"
-        src="//clustrmaps.com/map_v2.js?d=WiSG1pQe4ZW9IKghH4_0rGXtCbucPt0QR4qAjyprFCI&cl=ffffff&w=a"
-      ></script> -->
-      <a href="https://clustrmaps.com/site/1bie0" title="Visit tracker"
-        ><img
-          src="//www.clustrmaps.com/map_v2.png?d=WiSG1pQe4ZW9IKghH4_0rGXtCbucPt0QR4qAjyprFCI&cl=ffffff"
-          style="display: block; margin: 40px auto"
-      /></a>
-      <!--       <a href="https://clustrmaps.com/site/1bie0"  title="Visit tracker">
-        <img src="//www.clustrmaps.com/map_v2.png?d=WiSG1pQe4ZW9IKghH4_0rGXtCbucPt0QR4qAjyprFCI&cl=ffffff" /></a> -->
-      <div class="copyright">Copyright@2020-2021. All Rights Reserved.</div>
+            His current research interests include information retrieval and large language models.
+      </p>
     </div>
-  </body>
+
+    <!-- 联系方式 -->
+    <div id="correspondence" class="card">
+      <h3>Correspondence</h3>
+      <table class="table">
+        <tr>
+          <th>Email</th>
+          <td>reyon.ren [at] ruc (dot) edu (dot) cn&nbsp;&nbsp;<a href="mailto:reyon.ren@ruc.edu.cn">[Contact me]</a></td>
+        </tr>
+        <tr>
+          <th>Office</th>
+          <td>Lide Building 1808, No. 59 Zhongguancun Street, Haidian District, Beijing, 100872, China</td>
+        </tr>
+        <tr>
+          <th>Links</th>
+          <td>
+            <a href="https://scholar.google.com/citations?user=KpIEBYMAAAAJ"><strong>[Google Scholar]</strong></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://dblp.uni-trier.de/pid/265/6402.html"><strong>[DBLP]</strong></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://www.semanticscholar.org/author/Ruiyang-Ren/1708171825"><strong>[Semantic Scholar]</strong></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Publications -->
+    <div id="publications" class="card">
+      <h3>Publications</h3>
+      <h4>Conference and Journal Papers</h4>
+<ul>
+  <li>
+    <a href="https://arxiv.org/pdf/2412.12881"><strong>RAG-Star: Enhancing Deliberative Reasoning with Retrieval Augmented Verification and Refinement</strong></a><br />
+    Jinhao Jiang, Jiayi Chen, Junyi Li, <strong>Ruiyang Ren</strong>, Shijie Wang, Wayne Xin Zhao, Yang Song and Tao Zhang<br />
+    <i><i>NAACL 2025</i></i>
+  </li>
+  <li>
+    <a href="https://arxiv.org/pdf/2411.04602.pdf"><strong>Self-Calibrated Listwise Reranking with Large Language Models</strong></a><br />
+    <strong>Ruiyang Ren*</strong>, Yuhao Wang*, Kun Zhou, Wayne Xin Zhao, Wenjie Wang, Jing Liu, Ji-Rong Wen and Tat-Seng Chua<br />
+    <i><i>WWW 2025</i></i>
+  </li>
+  <li>
+    <a href="https://aclanthology.org/2025.coling-main.250/"><strong>Investigating the Factual Knowledge Boundary of Large Language Models with Retrieval Augmentation</strong></a><br />
+    <strong>Ruiyang Ren*</strong>, Yuhao Wang*, Yingqi Qu, Wayne Xin Zhao, Jing Liu, Hao Tian, Hua Wu, Ji-Rong Wen and Haifeng Wang<br />
+    <i><i>COLING 2025</i></i>
+  </li>
+  <li>
+    <a href="https://aclanthology.org/2024.emnlp-main.321.pdf"><strong>REAR: A Relevance-Aware Retrieval-Augmented Framework for Open-domain Question Answering</strong></a><br />
+    Yuhao Wang*, <strong>Ruiyang Ren*</strong>, Junyi Li, Wayne Xin Zhao, Jing Liu and Ji-Rong Wen<br />
+    <i><i>EMNLP 2024</i></i>
+  </li>
+  <li>
+    <a href="https://aclanthology.org/2024.findings-emnlp.50.pdf"><strong>BASES: Large-scale Web Search User Simulation with Large Language Model based Agents</strong></a><br />
+    <strong>Ruiyang Ren</strong>, Peng Qiu, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Hua Wu, Ji-Rong Wen and Haifeng Wang<br />
+    <i><i>Findings of EMNLP 2024</i></i>
+  </li>
+  <li>
+    <a href="https://arxiv.org/pdf/2401.03205.pdf"><strong>The Dawn After the Dark: An Empirical Study on Factuality Hallucination in Large Language Models</strong></a><br />
+    Junyi Li, Jie Chen, <strong>Ruiyang Ren</strong>, Xiaoxue Cheng, Wayne Xin Zhao, Jian-Yun Nie and Ji-Rong Wen<br />
+    <i><i>ACL 2024</i></i>
+  </li>
+  <li>
+    <a href="https://arxiv.org/pdf/2211.14876.pdf"><strong>Dense Text Retrieval based on Pretrained Language Models: A Survey</strong></a><br />
+    Wayne Xin Zhao, Jing Liu, <strong>Ruiyang Ren</strong> and Ji-Rong Wen<br />
+    <i><i>TOIS 2024</i></i>
+  </li>
+  <li>
+    <a href="https://arxiv.org/pdf/2204.12755.pdf"><strong>A Thorough Examination on Zero-shot Dense Retrieval</strong></a><br />
+    <strong>Ruiyang Ren</strong>, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Qifei Wu, Yuchen Ding, Hua Wu, Haifeng Wang and Ji-Rong Wen<br />
+    <i><i>Findings of EMNLP 2023</i></i>
+  </li>
+  <li>
+    <a href="https://aclanthology.org/2023.acl-long.336.pdf"><strong>TOME: A Two-stage Approach for Model-based Retrieval</strong></a><br />
+    <strong>Ruiyang Ren</strong>, Wayne Xin Zhao, Jing Liu, Hua Wu, Ji-Rong Wen and Haifeng Wang<br />
+    <i><i>ACL 2023</i></i>
+  </li>
+  <li>
+    <a href="https://aclanthology.org/2021.emnlp-main.224.pdf"><strong>RocketQAv2: A Joint Training Method for Dense Passage Retrieval and Passage Re-ranking</strong></a><br />
+    <strong>Ruiyang Ren*</strong>, Yingqi Qu*, Jing Liu, Wayne Xin Zhao, Qiaoqiao She, Hua Wu, Haifeng Wang and Ji-Rong Wen<br />
+    <i><i>EMNLP 2021</i></i>
+  </li>
+  <li>
+    <a href="https://aclanthology.org/2021.findings-acl.191.pdf"><strong>PAIR: Leveraging Passage-Centric Similarity Relation for Improving Dense Passage Retrieval</strong></a><br />
+    <strong>Ruiyang Ren*</strong>, Shangwen Lv*, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Qiaoqiao She, Hua Wu, Haifeng Wang and Ji-Rong Wen<br />
+    <i><i>Findings of ACL 2021</i></i>
+  </li>
+  <li>
+    <a href="https://www.aclweb.org/anthology/2021.naacl-main.466.pdf"><strong>RocketQA: An Optimized Training Approach to Dense Passage Retrieval for Open-Domain Question Answering</strong></a><br />
+    Yingqi Qu, Yuchen Ding, Jing Liu, Kai Liu, <strong>Ruiyang Ren</strong>, Wayne Xin Zhao, Daxiang Dong, Hua Wu and Haifeng Wang<br />
+    <i><i>NAACL 2021</i></i>
+  </li>
+  <li>
+    <a href="https://dl.acm.org/doi/pdf/10.1145/3406109"><strong>Fine-Grained Privacy Detection with Graph-Regularized Hierarchical Attentive Representation Learning</strong></a><br />
+    Xiaolin Chen, Xuemeng Song, <strong>Ruiyang Ren</strong>, Lei Zhu, Zhiyong Cheng and Liqiang Nie<br />
+    <i><i>TOIS 2020</i></i>
+  </li>
+  <li>
+    <a href="https://dl.acm.org/doi/pdf/10.1145/3397271.3401111"><strong>Sequential Recommendation with Self-Attentive Multi-Adversarial Network</strong></a><br />
+    <strong>Ruiyang Ren</strong>, Zhaoyang Liu, Yaliang Li, Wayne Xin Zhao, Hui Wang, Bolin Ding and Ji-Rong Wen<br />
+    <i><i>SIGIR 2020</i></i>
+  </li>
+</ul>
+
+      <h4>Preprints</h4>
+      <ul>
+        <li>
+          <a href="https://arxiv.org/pdf/2502.04751"><strong>Holistically Guided Monte Carlo Tree Search for Intricate Information Seeking</strong></a><br />
+          <strong>Ruiyang Ren*</strong>, Yuhao Wang*, Junyi Li*, Jinhao Jiang, Wayne Xin Zhao, Wenjie Wang, Tat-Seng Chua<br />
+          <i><i>arXiv 2025</i></i>
+        </li>
+        <li>
+          <a href="https://arxiv.org/pdf/2303.18223.pdf"><strong>A Survey of Large Language Models</strong></a><br />
+          Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, 
+          Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, <strong>Ruiyang Ren</strong>, 
+          Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie and Ji-Rong Wen<br />
+          <i><i>arXiv 2023</i></i>
+        </li>
+      </ul>
+      <i>* Equal Contribution</i>
+    </div>
+
+    <!-- Experiences -->
+    <div id="experiences" class="card">
+      <h3>Experiences</h3>
+      <ul>
+        <li>
+          Visiting Student, NExT++ Research Centre, <strong>National University of Singapore</strong>, Jul 2024 – Now<br />
+          Working with Prof. <a href="https://www.chuatatseng.com/">Tat-Seng Chua</a>
+        </li>
+        <li>
+          Research Intern, NLP Department, <strong>Baidu</strong>, May 2020 - Jul 2024<br />
+          Worked with Dr. <a href="https://www.machinereading.ai/">Jing Liu</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Selected Awards -->
+    <div id="awards" class="card">
+      <h3>Selected Awards</h3>
+      <ul>
+        <li>2023, Outstanding Innovative Talents Cultivation Funded Programs, Renmin University of China</li>
+        <li>2021, Academic Rising Star candidate, Renmin University of China</li>
+        <li>2020, National Scholarship for Graduate Students of China (Highest National Scholarship)</li>
+        <li>2020, SIGIR Student Travel Grant</li>
+        <li>2020,2021, Graduate Student First-class Academic Scholarship, Renmin University of China</li>
+        <li>2020,2021, Merit Student, Renmin University of China</li>
+        <li>2013, First Prize of National Olympiad in Informatics in Provinces (NOIP) in Hebei Province</li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div id="services" class="card">
+      <h3>Services</h3>
+      <h4>Area Chair</h4>
+      <ul>
+        <li>ARR 2025 February</li>
+      </ul>
+      <h4>Program Committee Member/Reviewer</h4>
+      <ul>
+        <li>ACL, SIGIR, SIGKDD, WWW, TOIS, EMNLP, WSDM, CIKM, COLING, TMM, TCSVT, TALLIP</li>
+      </ul>
+      <h4>Conference Volunteer</h4>
+      <ul>
+        <li>CIKM 2019</li>
+      </ul>
+    </div>
+
+    <!-- Teaching -->
+    <div id="teaching" class="card">
+      <h3>Teaching</h3>
+      <ul>
+        <li>2020,2021 Fall, Teaching Assistant, Statistical Product and Service Solutions Application (for undergraduate students in RUC)</li>
+        <li>2020,2021 Spring, Teaching Assistant, Information Technology Fundamentals (for undergraduate students in RUC)</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
 </html>
