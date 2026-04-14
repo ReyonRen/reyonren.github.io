@@ -10,9 +10,8 @@
       --bg: #f5f7fb;
       --bg-2: #fafbfd;
       --surface: rgba(255, 255, 255, 0.94);
-      --surface-strong: #ffffff;
       --text: #17212b;
-      --text-secondary: #54616f;
+      --text-secondary: #556170;
       --text-tertiary: #7b8794;
       --line: #e3e8ef;
       --line-strong: #d6dee8;
@@ -49,7 +48,7 @@
     a {
       color: var(--primary);
       text-decoration: none;
-      transition: color 0.18s ease;
+      transition: color 0.18s ease, opacity 0.18s ease;
     }
 
     a:hover {
@@ -59,6 +58,10 @@
     img {
       display: block;
       max-width: 100%;
+    }
+
+    section[id] {
+      scroll-margin-top: 88px;
     }
 
     .container {
@@ -313,6 +316,15 @@
       font-style: italic;
     }
 
+    .pub-note-top {
+      margin: -2px 0 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 12.5px;
+      color: var(--text-tertiary);
+    }
+
     .pub-note {
       margin-top: 14px;
       font-size: 13px;
@@ -438,7 +450,6 @@
       <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#about">About</a>
         <a href="#biography">Biography</a>
         <a href="#publications">Publications</a>
         <a href="#experiences">Experiences</a>
@@ -451,7 +462,7 @@
 
   <main>
     <div class="container stack">
-      <section id="about" class="section-card intro-card">
+      <section class="section-card intro-card">
         <div class="intro-grid">
           <img class="portrait" src="./self-photo.jpg" alt="Portrait of Ruiyang Ren" />
 
@@ -514,6 +525,21 @@
         </div>
         <div class="section-divider"></div>
 
+        <div class="pub-note-top">
+          <span>* Equal contribution</span>
+          <span>&dagger; Corresponding author</span>
+        </div>
+
+        <div class="subsection-title">Preprints</div>
+        <ul class="pub-list">
+          <li>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2603.10677" target="_blank" rel="noopener noreferrer">Emulating Clinician Cognition via Self-Evolving Deep Clinical Research</a></div>
+            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Yuhao Wang, Yunsen Liang, Lan Luo, Jing Liu, Haifeng Wang, Cong Feng, Yinan Zhang, Chunyan Miao, Ji-Rong Wen, Wayne Xin Zhao</div>
+            <div class="pub-venue">arXiv 2026</div>
+          </li>
+        </ul>
+
+        <div class="subsection-title">Conference and Journal Papers</div>
         <ul class="pub-list">
           <li>
             <div class="pub-title"><a href="https://arxiv.org/pdf/2505.20825" target="_blank" rel="noopener noreferrer">Reinforced Informativeness Optimization for Long-Form Retrieval-Augmented Generation</a></div>
@@ -621,19 +647,6 @@
             <div class="pub-venue">SIGIR 2020</div>
           </li>
         </ul>
-
-        <div class="subsection-title">Preprints</div>
-        <ul class="pub-list">
-          <li>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2603.10677" target="_blank" rel="noopener noreferrer">Emulating Clinician Cognition via Self-Evolving Deep Clinical Research</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Yuhao Wang, Yunsen Liang, Lan Luo, Jing Liu, Haifeng Wang, Cong Feng, Yinan Zhang, Chunyan Miao, Ji-Rong Wen, Wayne Xin Zhao</div>
-            <div class="pub-venue">arXiv 2026</div>
-          </li>
-        </ul>
-
-        <div class="pub-note">
-          * Equal Contribution &nbsp;&nbsp;|&nbsp;&nbsp; &dagger; Corresponding Author
-        </div>
       </section>
 
       <div class="two-col">
@@ -730,32 +743,50 @@
       nav.classList.toggle('open');
     }
 
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const header = document.querySelector('.site-header');
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const sections = navLinks
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + entry.target.id) {
-              link.classList.add('active');
-            }
-          });
+    function setActiveLink(id) {
+      navLinks.forEach(link => {
+        const active = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', active);
+        if (active) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
         }
       });
-    }, {
-      rootMargin: '-35% 0px -55% 0px',
-      threshold: 0
-    });
+    }
 
-    sections.forEach((section) => observer.observe(section));
+    function updateActiveNav() {
+      const offset = window.scrollY + header.offsetHeight + 24;
+      let currentId = sections.length ? sections[0].id : '';
 
-    navLinks.forEach((link) => {
+      sections.forEach(section => {
+        if (section.offsetTop <= offset) {
+          currentId = section.id;
+        }
+      });
+
+      if (currentId) setActiveLink(currentId);
+    }
+
+    navLinks.forEach(link => {
       link.addEventListener('click', () => {
+        const id = link.getAttribute('href').slice(1);
+        setActiveLink(id);
         document.getElementById('navLinks').classList.remove('open');
+        setTimeout(updateActiveNav, 250);
       });
     });
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    window.addEventListener('resize', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
+    document.addEventListener('DOMContentLoaded', updateActiveNav);
   </script>
 </body>
 </html>
