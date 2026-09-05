@@ -47,6 +47,8 @@ main { padding: 54px 0 64px; }
 .meta { font-size: 16px; color: var(--secondary); margin-top: 8px; }
 .meta strong { color: var(--text); font-weight: 500; }
 .info-block { grid-column: 2; display: grid; gap: 5px; }
+.lab-affiliation { margin-bottom: 5px; font-size: 14px; line-height: 1.6; color: var(--secondary); }
+.lab-acronym { white-space: nowrap; font-weight: 500; }
 .info-content { font-size: 14px; color: var(--secondary); }
 .profile-links { display: flex; gap: 6px 20px; flex-wrap: wrap; }
 .profile-links a { display: inline-flex; align-items: center; min-height: 28px; font-weight: 500; }
@@ -113,6 +115,7 @@ p + p { margin-top: 16px; }
   .intro-grid { grid-template-columns: 76px minmax(0, 1fr); gap: 18px; align-items: start; }
   .portrait { grid-row: 1; width: 76px; height: 96px; }
   .info-block { grid-column: 1 / -1; }
+  .lab-affiliation { font-size: 13px; }
   .name-row { gap: 7px; }
   .name-en { font-size: 27px; }
   .name-cn { font-size: 14px; }
