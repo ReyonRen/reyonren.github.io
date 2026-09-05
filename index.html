@@ -4,525 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruiyang Ren | Homepage</title>
-  <meta name="description" content="Ruiyang Ren's homepage." />
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --bg-2: #fafbfd;
-      --surface: rgba(255, 255, 255, 0.94);
-      --text: #17212b;
-      --text-secondary: #556170;
-      --text-tertiary: #7b8794;
-      --line: #e3e8ef;
-      --line-strong: #d6dee8;
-      --primary: #1d4d8f;
-      --primary-dark: #173d72;
-      --shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.035);
-      --shadow-md: 0 14px 34px rgba(15, 23, 42, 0.06);
-      --radius-xl: 22px;
-      --radius-lg: 16px;
-      --radius-md: 12px;
-      --max-width: 1040px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(29, 77, 143, 0.04), transparent 26%),
-        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
-      line-height: 1.72;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.18s ease, opacity 0.18s ease;
-    }
-
-    a:hover {
-      color: var(--primary-dark);
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    section[id] {
-      scroll-margin-top: 88px;
-    }
-
-    .container {
-      width: min(var(--max-width), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(12px);
-      background: rgba(248, 250, 252, 0.84);
-      border-bottom: 1px solid rgba(23, 33, 43, 0.06);
-    }
-
-    .nav {
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      position: relative;
-    }
-
-    .brand {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      color: var(--text);
-      white-space: nowrap;
-    }
-
-    .nav-toggle {
-      display: none;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--text);
-      padding: 8px 11px;
-      border-radius: 10px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      font-size: 13.5px;
-      font-weight: 600;
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
-      background: rgba(29, 77, 143, 0.07);
-    }
-
-    main {
-      padding: 18px 0 48px;
-    }
-
-    .stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    .section-card {
-      background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.88);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-sm);
-      padding: 22px 22px 18px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      margin: 0;
-      font-size: 21px;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      font-weight: 720;
-    }
-
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, var(--line-strong), transparent);
-      margin-bottom: 14px;
-    }
-
-    p {
-      margin: 0;
-      font-size: 14.8px;
-      color: var(--text-secondary);
-    }
-
-    /* Intro */
-    .intro-card {
-      padding: 20px 22px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .portrait {
-      width: 92px;
-      height: 116px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #eef2f7;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .intro-main {
-      min-width: 0;
-    }
-
-    .name-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px 14px;
-    }
-
-    .name-en {
-      margin: 0;
-      font-size: clamp(24px, 3.4vw, 30px);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      font-weight: 710;
-    }
-
-    .name-cn {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
-      font-size: 16px;
-      line-height: 1;
-      letter-spacing: 0.08em;
-      color: var(--text-secondary);
-      font-weight: 400;
-      white-space: nowrap;
-    }
-
-    .name-cn::before {
-      content: "";
-      width: 1px;
-      height: 18px;
-      background: var(--line-strong);
-      border-radius: 999px;
-    }
-
-    .meta {
-      margin-top: 6px;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    .meta strong {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .info-block {
-      margin-top: 12px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .info-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding-top: 10px;
-      border-top: 1px solid var(--line);
-    }
-
-    .info-label {
-      flex: 0 0 64px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      line-height: 1.8;
-    }
-
-    .info-content {
-      min-width: 0;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    .profile-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 14px;
-    }
-
-    .profile-links a {
-      font-weight: 600;
-      font-size: 13.5px;
-    }
-
-    /* Lists */
-    .pub-list,
-    .clean-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .pub-list li {
-      padding: 14px 0 15px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .pub-list li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .pub-title {
-      font-size: 15.4px;
-      line-height: 1.5;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .pub-title a {
-      color: var(--text);
-    }
-
-    .pub-title a:hover {
-      color: var(--primary);
-    }
-
-    .pub-authors {
-      margin-top: 5px;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    .pub-venue {
-      margin-top: 4px;
-      font-size: 13.5px;
-      color: var(--text-tertiary);
-      font-style: italic;
-    }
-
-    .pub-note-top {
-      margin: -2px 0 12px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      font-size: 12.5px;
-      color: var(--text-tertiary);
-    }
-
-    .pub-note {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--text-tertiary);
-    }
-
-    .subsection-title {
-      margin: 18px 0 10px;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.01em;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .clean-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--text-secondary);
-      font-size: 14.4px;
-    }
-
-    .clean-list li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .clean-list strong {
-      color: var(--text);
-    }
-
-    .site-footer {
-      padding: 8px 0 36px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-tertiary);
-    }
-
-    @media (max-width: 900px) {
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 820px) {
-      .nav-toggle {
-        display: inline-flex;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
-        left: 0;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.95);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        box-shadow: var(--shadow-md);
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 11px 13px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(var(--max-width), calc(100% - 20px));
-      }
-
-      .section-card,
-      .intro-card {
-        padding: 18px 16px 16px;
-      }
-
-      .intro-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .portrait {
-        width: 84px;
-        height: 106px;
-      }
-
-      .name-row {
-        gap: 7px 10px;
-      }
-
-      .name-cn {
-        gap: 10px;
-        font-size: 15px;
-      }
-
-      .section-title {
-        font-size: 19px;
-      }
-
-      .pub-title {
-        font-size: 15px;
-      }
-
-      .info-row {
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .info-label {
-        flex: none;
-      }
-    }
-  </style>
+  <meta name="description" content="Ruiyang Ren, Research Scientist at Nanyang Technological University. Research in information retrieval, large language models, and agents." />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container nav">
-      <div class="brand">Ruiyang Ren</div>
-
-      <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">Menu</button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#biography">Biography</a>
-        <a href="#publications">Publications</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#awards">Awards</a>
-        <a href="#services">Services</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="./index.html" aria-current="page">Home</a>
+        <a href="./publications.html">Publications</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <div class="container stack">
-      <section class="section-card intro-card">
+      <section class="profile" aria-labelledby="profile-name">
         <div class="intro-grid">
-          <img class="portrait" src="./self-photo.jpg" alt="Portrait of Ruiyang Ren" />
+          <img width="112" height="142" class="portrait" src="./self-photo.jpg" alt="Portrait of Ruiyang Ren" />
 
           <div class="intro-main">
             <div class="name-row">
-              <h1 class="name-en">Ruiyang Ren</h1>
-              <div class="name-cn">任瑞阳</div>
+              <h1 class="name-en" id="profile-name">Ruiyang Ren</h1>
+              <div class="name-cn" lang="zh-Hans">任瑞阳</div>
             </div>
 
             <div class="meta">
               Research Scientist, <strong>Nanyang Technological University</strong>
             </div>
+          </div>
 
-            <div class="info-block">
-              <div class="info-row">
-                <div class="info-label">Email</div>
-                <div class="info-content">reyon_ren [at] outlook [dot] com</div>
-              </div>
+          <div class="info-block">
+            <div class="info-row">
+              <div class="info-content">reyon_ren [at] outlook [dot] com</div>
+            </div>
 
-              <div class="info-row">
-                <div class="info-label">Links</div>
-                <div class="info-content profile-links">
-                  <a href="https://scholar.google.com/citations?user=KpIEBYMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-                  <a href="https://dblp.uni-trier.de/pid/265/6402.html" target="_blank" rel="noopener noreferrer">DBLP</a>
-                  <a href="https://www.semanticscholar.org/author/Ruiyang-Ren/1708171825" target="_blank" rel="noopener noreferrer">Semantic Scholar</a>
-                </div>
+            <div class="info-row">
+              <div class="info-content profile-links">
+                <a href="https://scholar.google.com/citations?user=KpIEBYMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+                <a href="https://dblp.uni-trier.de/pid/265/6402.html" target="_blank" rel="noopener noreferrer">DBLP</a>
+                <a href="https://www.semanticscholar.org/author/Ruiyang-Ren/1708171825" target="_blank" rel="noopener noreferrer">Semantic Scholar</a>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="biography" class="section-card">
-        <div class="section-head">
-          <h2 class="section-title">Biography</h2>
-        </div>
-        <div class="section-divider"></div>
+        <div id="biography" class="biography">
 
         <p>
           Ruiyang Ren is a Research Scientist at
@@ -534,231 +62,91 @@
           and was a visiting student at the NExT++ Research Center, 
           <a href="https://www.nus.edu.sg/" target="_blank" rel="noopener noreferrer">National University of Singapore</a>, working with Prof. 
           <a href="https://www.chuatatseng.com/" target="_blank" rel="noopener noreferrer">Tat-Seng Chua</a>.
-          He received his M.E. from Renmin University of China in 2022, supervised by Prof.
+          He received his M.E. from Renmin University of China, supervised by Prof.
           <a href="https://gsai.ruc.edu.cn/jrwen" target="_blank" rel="noopener noreferrer">Ji-Rong Wen</a>
           and Prof.
           <a href="http://aibox.ruc.edu.cn/batmanfly" target="_blank" rel="noopener noreferrer">Wayne Xin Zhao</a>,
           and his B.E. in Computer Science and Technology from
           <a href="https://www.tsxt.sdu.edu.cn/" target="_blank" rel="noopener noreferrer">Taishan College</a> (honor college),
-          <a href="https://www.sdu.edu.cn/" target="_blank" rel="noopener noreferrer">Shandong University</a> in 2019, supervised by Prof.
+          <a href="https://www.sdu.edu.cn/" target="_blank" rel="noopener noreferrer">Shandong University</a>, supervised by Prof.
           <a href="https://xuemengsong.github.io/" target="_blank" rel="noopener noreferrer">Xuemeng Song</a>
           and Prof.
           <a href="https://liqiangnie.github.io/index.html" target="_blank" rel="noopener noreferrer">Liqiang Nie</a>.
+
           His research interests are information retrieval, large language models, and agents.
         </p>
-      </section>
-
-      <section id="publications" class="section-card">
-        <div class="section-head">
-          <h2 class="section-title">Publications</h2>
+        <a class="text-link" href="./publications.html">View publications <span aria-hidden="true">→</span></a>
         </div>
-        <div class="section-divider"></div>
-
-        <div class="pub-note-top">
-          <span>* Co-first author</span>
-          <span>&dagger; Corresponding author</span>
-        </div>
-
-
-        <!-- <div class="subsection-title">Conference and Journal Papers</div> -->
-        <ul class="pub-list">
-          <li>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2608.08768" target="_blank" rel="noopener noreferrer">BOUND: Brief-Guided Corrective Preference Distillation at Search-Control Boundaries</a></div>
-            <div class="pub-authors">Qingying Niu, <strong>Ruiyang Ren</strong><sup>&dagger;</sup>, Wayne Xin Zhao, Yaliang Li</div>
-            <div class="pub-venue">arXiv</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2604.18362" target="_blank" rel="noopener noreferrer">ArbGraph: Conflict-Aware Evidence Arbitration for Reliable Long-Form Retrieval-Augmented Generation</a></div>
-            <div class="pub-authors">Qingying Niu, Yuhao Wang, <strong>Ruiyang Ren</strong><sup>&dagger;</sup>, Bohui Fang, Wayne Xin Zhao</div>
-            <div class="pub-venue">arXiv</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2603.10677" target="_blank" rel="noopener noreferrer">Emulating Clinician Cognition via Self-Evolving Deep Clinical Research</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Yuhao Wang, Yunsen Liang, Lan Luo, Jing Liu, Haifeng Wang, Cong Feng, Yinan Zhang, Chunyan Miao, Ji-Rong Wen, Wayne Xin Zhao</div>
-            <div class="pub-venue">arXiv</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2026.acl-long.612/" target="_blank" rel="noopener noreferrer">Reinforced Informativeness Optimization for Long-Form Retrieval-Augmented Generation</a></div>
-            <div class="pub-authors">Yuhao Wang, <strong>Ruiyang Ren</strong><sup>&dagger;</sup>, Yucheng Wang, Wayne Xin Zhao, Jing Liu, Hua Wu, Haifeng Wang</div>
-            <div class="pub-venue">ACL 2026</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://doi.org/10.1007/s11704-026-60308-3" target="_blank" rel="noopener noreferrer">A Survey of Large Language Models</a></div>
-            <div class="pub-authors">Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Zican Dong, Yupeng Hou, Beichen Zhang, Yingqian Min, Junjie Zhang, Peiyu Liu, Xiaolei Wang, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, <strong>Ruiyang Ren</strong>, Yifan Li, Xinyu Tang, Zikang Liu, Yiwen Hu, Jian-Yun Nie and Ji-Rong Wen</div>
-            <div class="pub-venue">Frontiers of Computer Science 2026</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/40664" target="_blank" rel="noopener noreferrer">BEE-RAG: Balanced Entropy Engineering for Retrieval-Augmented Generation</a></div>
-            <div class="pub-authors">Yuhao Wang, <strong>Ruiyang Ren</strong>*, Yucheng Wang, Jing Liu, Wayne Xin Zhao, Hua Wu, Haifeng Wang</div>
-            <div class="pub-venue">AAAI 2026</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2025.findings-emnlp.739/" target="_blank" rel="noopener noreferrer">SimpleDeepSearcher: Deep Information Seeking via Web-Powered Reasoning Trajectory Synthesis</a></div>
-            <div class="pub-authors">Shuang Sun, Huatong Song, Yuhao Wang, <strong>Ruiyang Ren</strong>, Jinhao Jiang, Junjie Zhang, Fei Bai, Jia Deng, Xin Zhao, Zheng Liu, Lei Fang, Zhongyuan Wang, Ji-Rong Wen</div>
-            <div class="pub-venue">Findings of EMNLP 2025</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://doi.org/10.1145/3746252.3760995" target="_blank" rel="noopener noreferrer">STARec: An Efficient Agent Framework for Recommender Systems via Autonomous Deliberate Reasoning</a></div>
-            <div class="pub-authors">Chenghao Wu, <strong>Ruiyang Ren</strong>*, Junjie Zhang, Ruirui Wang, Zhongrui Ma, Qi Ye and Wayne Xin Zhao</div>
-            <div class="pub-venue">CIKM 2025</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3726302.3730025" target="_blank" rel="noopener noreferrer">LLM-based Search Assistant with Holistically Guided MCTS for Intricate Information Seeking</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Yuhao Wang, Junyi Li, Jinhao Jiang, Wayne Xin Zhao, Wenjie Wang, Tat-Seng Chua</div>
-            <div class="pub-venue">SIGIR 2025</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://doi.org/10.1145/3726302.3730112" target="_blank" rel="noopener noreferrer">Unveiling Knowledge Utilization Mechanisms in LLM-based Retrieval-Augmented Generation</a></div>
-            <div class="pub-authors">Yuhao Wang, <strong>Ruiyang Ren</strong>*, Yucheng Wang, Wayne Xin Zhao, Jing Liu, Hua Wu and Haifeng Wang</div>
-            <div class="pub-venue">SIGIR 2025</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2025.naacl-long.361/" target="_blank" rel="noopener noreferrer">RAG-Star: Enhancing Deliberative Reasoning with Retrieval Augmented Verification and Refinement</a></div>
-            <div class="pub-authors">Jinhao Jiang, Jiayi Chen, Junyi Li, <strong>Ruiyang Ren</strong>, Shijie Wang, Wayne Xin Zhao, Yang Song and Tao Zhang</div>
-            <div class="pub-venue">NAACL 2025</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://doi.org/10.1145/3696410.3714658" target="_blank" rel="noopener noreferrer">Self-Calibrated Listwise Reranking with Large Language Models</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Yuhao Wang, Kun Zhou, Wayne Xin Zhao, Wenjie Wang, Jing Liu, Ji-Rong Wen and Tat-Seng Chua</div>
-            <div class="pub-venue">WWW 2025</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2025.coling-main.250/" target="_blank" rel="noopener noreferrer">Investigating the Factual Knowledge Boundary of Large Language Models with Retrieval Augmentation</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Yuhao Wang, Yingqi Qu, Wayne Xin Zhao, Jing Liu, Hao Tian, Hua Wu, Ji-Rong Wen and Haifeng Wang</div>
-            <div class="pub-venue">COLING 2025</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2024.emnlp-main.321/" target="_blank" rel="noopener noreferrer">REAR: A Relevance-Aware Retrieval-Augmented Framework for Open-domain Question Answering</a></div>
-            <div class="pub-authors">Yuhao Wang, <strong>Ruiyang Ren</strong>*, Junyi Li, Wayne Xin Zhao, Jing Liu and Ji-Rong Wen</div>
-            <div class="pub-venue">EMNLP 2024</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2024.findings-emnlp.50/" target="_blank" rel="noopener noreferrer">BASES: Large-scale Web Search User Simulation with Large Language Model based Agents</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Peng Qiu, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Hua Wu, Ji-Rong Wen and Haifeng Wang</div>
-            <div class="pub-venue">Findings of EMNLP 2024</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2024.acl-long.586/" target="_blank" rel="noopener noreferrer">The Dawn After the Dark: An Empirical Study on Factuality Hallucination in Large Language Models</a></div>
-            <div class="pub-authors">Junyi Li, Jie Chen, <strong>Ruiyang Ren</strong>, Xiaoxue Cheng, Wayne Xin Zhao, Jian-Yun Nie and Ji-Rong Wen</div>
-            <div class="pub-venue">ACL 2024</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://doi.org/10.1145/3637870" target="_blank" rel="noopener noreferrer">Dense Text Retrieval based on Pretrained Language Models: A Survey</a></div>
-            <div class="pub-authors">Wayne Xin Zhao, Jing Liu, <strong>Ruiyang Ren</strong> and Ji-Rong Wen</div>
-            <div class="pub-venue">TOIS 2024</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2023.findings-emnlp.1057/" target="_blank" rel="noopener noreferrer">A Thorough Examination on Zero-shot Dense Retrieval</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Qifei Wu, Yuchen Ding, Hua Wu, Haifeng Wang and Ji-Rong Wen</div>
-            <div class="pub-venue">Findings of EMNLP 2023</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2023.acl-long.336/" target="_blank" rel="noopener noreferrer">TOME: A Two-stage Approach for Model-based Retrieval</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Wayne Xin Zhao, Jing Liu, Hua Wu, Ji-Rong Wen and Haifeng Wang</div>
-            <div class="pub-venue">ACL 2023</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2021.emnlp-main.224/" target="_blank" rel="noopener noreferrer">RocketQAv2: A Joint Training Method for Dense Passage Retrieval and Passage Re-ranking</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Qiaoqiao She, Hua Wu, Haifeng Wang and Ji-Rong Wen</div>
-            <div class="pub-venue">EMNLP 2021</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2021.findings-acl.191/" target="_blank" rel="noopener noreferrer">PAIR: Leveraging Passage-Centric Similarity Relation for Improving Dense Passage Retrieval</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Shangwen Lv, Yingqi Qu, Jing Liu, Wayne Xin Zhao, Qiaoqiao She, Hua Wu, Haifeng Wang and Ji-Rong Wen</div>
-            <div class="pub-venue">Findings of ACL 2021</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://aclanthology.org/2021.naacl-main.466/" target="_blank" rel="noopener noreferrer">RocketQA: An Optimized Training Approach to Dense Passage Retrieval for Open-Domain Question Answering</a></div>
-            <div class="pub-authors">Yingqi Qu, Yuchen Ding, Jing Liu, Kai Liu, <strong>Ruiyang Ren</strong>, Wayne Xin Zhao, Daxiang Dong, Hua Wu and Haifeng Wang</div>
-            <div class="pub-venue">NAACL 2021</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3406109" target="_blank" rel="noopener noreferrer">Fine-Grained Privacy Detection with Graph-Regularized Hierarchical Attentive Representation Learning</a></div>
-            <div class="pub-authors">Xiaolin Chen, Xuemeng Song, <strong>Ruiyang Ren</strong>, Lei Zhu, Zhiyong Cheng and Liqiang Nie</div>
-            <div class="pub-venue">TOIS 2020</div>
-          </li>
-          <li>
-            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3397271.3401111" target="_blank" rel="noopener noreferrer">Sequential Recommendation with Self-Attentive Multi-Adversarial Network</a></div>
-            <div class="pub-authors"><strong>Ruiyang Ren</strong>, Zhaoyang Liu, Yaliang Li, Wayne Xin Zhao, Hui Wang, Bolin Ding and Ji-Rong Wen</div>
-            <div class="pub-venue">SIGIR 2020</div>
-          </li>
-        </ul>
       </section>
 
       <div class="two-col">
-        <section id="experiences" class="section-card">
+        <section id="experiences" class="content-section">
           <div class="section-head">
             <h2 class="section-title">Experiences</h2>
           </div>
-          <div class="section-divider"></div>
 
           <ul class="clean-list">
             <li>
-              <strong>Research Scientist, Nanyang Technological University</strong><br />
-              Present<br />
+              <strong>Research Scientist, Nanyang Technological University</strong>
+              <span class="experience-date">Present</span>
               Working with Prof. <a href="https://dr.ntu.edu.sg/entities/person/Miao-Chun-Yan" target="_blank" rel="noopener noreferrer">Chunyan Miao</a>
             </li>
             <li>
-              <strong>Research Intern, Wenxin, Baidu</strong><br />
-              July 2025 – July 2026<br />
+              <strong>Research Intern, Wenxin, Baidu</strong>
+              <span class="experience-date">July 2025 – July 2026</span>
               Worked with Dr. <a href="https://scholar.google.com/citations?user=jgy4jCAAAAAJ" target="_blank" rel="noopener noreferrer">Haifeng Wang</a> and <a href="https://www.machinereading.ai/" target="_blank" rel="noopener noreferrer">Jing Liu</a>
             </li>
             <li>
-              <strong>Visiting Student, NExT++ Research Centre, National University of Singapore</strong><br />
-              Jul 2024 – Jan 2025<br />
+              <strong>Visiting Student, NExT++ Research Centre, National University of Singapore</strong>
+              <span class="experience-date">Jul 2024 – Jan 2025</span>
               Worked with Prof. <a href="https://www.chuatatseng.com/" target="_blank" rel="noopener noreferrer">Tat-Seng Chua</a>
             </li>
             <li>
-              <strong>Research Intern, NLP Department, Baidu</strong><br />
-              May 2020 – Jul 2024<br />
+              <strong>Research Intern, NLP Department, Baidu</strong>
+              <span class="experience-date">May 2020 – Jul 2024</span>
               Worked with Dr. <a href="https://www.machinereading.ai/" target="_blank" rel="noopener noreferrer">Jing Liu</a>
             </li>
           </ul>
         </section>
 
-        <section id="awards" class="section-card">
+        <section id="awards" class="content-section">
           <div class="section-head">
             <h2 class="section-title">Selected Awards</h2>
           </div>
-          <div class="section-divider"></div>
 
           <ul class="clean-list">
-            <li>2025, JD Scholarship, Renmin University of China</li>
-            <li>2023, Outstanding Innovative Talents Cultivation Funded Programs, Renmin University of China</li>
-            <li>2021, Academic Rising Star candidate, Renmin University of China</li>
-            <li>2020, National Scholarship for Graduate Students of China (Highest National Scholarship)</li>
-            <li>2020, SIGIR Student Travel Grant</li>
-            <li>2020, 2021, Graduate Student First-class Academic Scholarship, Renmin University of China</li>
-            <li>2020, 2021, Merit Student, Renmin University of China</li>
-            <li>2013, First Prize of National Olympiad in Informatics in Provinces (NOIP) in Hebei Province</li>
+            <li><span class="award-date">2025</span><span>JD Scholarship, Renmin University of China</span></li>
+            <li><span class="award-date">2023</span><span>Outstanding Innovative Talents Cultivation Funded Programs, Renmin University of China</span></li>
+            <li><span class="award-date">2021</span><span>Academic Rising Star candidate, Renmin University of China</span></li>
+            <li><span class="award-date">2020</span><span>National Scholarship for Graduate Students of China (Highest National Scholarship)</span></li>
+            <li><span class="award-date">2020</span><span>SIGIR Student Travel Grant</span></li>
+            <li><span class="award-date">2013</span><span>First Prize of National Olympiad in Informatics in Provinces (NOIP) in Hebei Province</span></li>
           </ul>
         </section>
       </div>
 
-      <div>
-        <section id="services" class="section-card">
+      <section id="services" class="content-section">
           <div class="section-head">
             <h2 class="section-title">Services</h2>
           </div>
-          <div class="section-divider"></div>
 
-          <div class="subsection-title">Area Chair</div>
+          <div class="service-grid">
+<div class="service-item"><h3 class="subsection-title">Area Chair</h3>
           <ul class="clean-list">
             <li>ARR</li>
-          </ul>
+          </ul></div>
 
-          <div class="subsection-title">Program Committee Member / Reviewer</div>
+          <div class="service-item"><h3 class="subsection-title">Program Committee Member / Reviewer</h3>
           <ul class="clean-list">
             <li>ACL, SIGIR, NeurIPS, KDD, WWW, TOIS, TMM, EMNLP, WSDM, CIKM, COLING, TASLP, TCSVT, TALLIP</li>
-          </ul>
+          </ul></div>
 
-          <div class="subsection-title">Conference Volunteer</div>
+          <div class="service-item"><h3 class="subsection-title">Conference Volunteer</h3>
           <ul class="clean-list">
             <li>CIKM 2019</li>
-          </ul>
-        </section>
-
-      </div>
+          </ul></div>
+          </div>
+      </section>
     </div>
   </main>
 
@@ -768,56 +156,5 @@
     </div>
   </footer>
 
-  <script>
-    function toggleNav() {
-      const nav = document.getElementById('navLinks');
-      nav.classList.toggle('open');
-    }
-
-    const header = document.querySelector('.site-header');
-    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-    const sections = navLinks
-      .map(link => document.querySelector(link.getAttribute('href')))
-      .filter(Boolean);
-
-    function setActiveLink(id) {
-      navLinks.forEach(link => {
-        const active = link.getAttribute('href') === '#' + id;
-        link.classList.toggle('active', active);
-        if (active) {
-          link.setAttribute('aria-current', 'page');
-        } else {
-          link.removeAttribute('aria-current');
-        }
-      });
-    }
-
-    function updateActiveNav() {
-      const offset = window.scrollY + header.offsetHeight + 24;
-      let currentId = sections.length ? sections[0].id : '';
-
-      sections.forEach(section => {
-        if (section.offsetTop <= offset) {
-          currentId = section.id;
-        }
-      });
-
-      if (currentId) setActiveLink(currentId);
-    }
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        const id = link.getAttribute('href').slice(1);
-        setActiveLink(id);
-        document.getElementById('navLinks').classList.remove('open');
-        setTimeout(updateActiveNav, 250);
-      });
-    });
-
-    window.addEventListener('scroll', updateActiveNav, { passive: true });
-    window.addEventListener('resize', updateActiveNav);
-    window.addEventListener('load', updateActiveNav);
-    document.addEventListener('DOMContentLoaded', updateActiveNav);
-  </script>
 </body>
 </html>
