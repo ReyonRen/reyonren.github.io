@@ -58,7 +58,7 @@ main { padding: 54px 0 64px; }
 .info-content { font-size: 14px; color: var(--secondary); }
 .profile-links { display: flex; gap: 6px 20px; flex-wrap: wrap; }
 .profile-links a { display: inline-flex; align-items: center; min-height: 28px; font-weight: 500; }
-.biography { margin-top: 30px; max-width: 820px; }
+.biography { margin-top: 30px; }
 p { margin: 0; color: var(--secondary); font-size: 16px; }
 p + p { margin-top: 16px; }
 .text-link { display: inline-block; margin-top: 18px; font-size: 14px; font-weight: 600; }
