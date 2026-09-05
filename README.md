@@ -11,6 +11,6 @@ Live website: [rui-yang.ren](https://rui-yang.ren)
 - `social-card.png`: preview image for shared links (1200 × 630).
 - `CNAME`: custom domain configuration.
 
-This is a static website with no build step. Open `index.html` locally to preview both pages. Keep the Home / Publications navigation consistent across the two HTML files. Update the publication year links when adding a new year. Prefer verified publisher or conference links for published papers.
+This is a static website with no build step. Open `index.html` locally to preview both pages. Keep the Home / Publications navigation consistent across the two HTML files. Prefer verified publisher or conference links for published papers.
 
 GitHub Pages publishes the `gh-pages` branch. After checking the changes locally, commit and push to deploy.
