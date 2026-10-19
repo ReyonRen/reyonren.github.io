@@ -75,8 +75,8 @@ p + p { margin-top: 16px; }
 .award-date { color: var(--muted); font-size: 12px; line-height: 2.04; font-variant-numeric: tabular-nums; }
 #services { padding-top: 34px; border-top: 1px solid var(--line); }
 .service-list { display: grid; gap: 22px; margin: 0; }
-.service-item { display: grid; grid-template-columns: 260px minmax(0, 1fr); column-gap: 32px; align-items: baseline; }
-.service-item dt { font-size: 14px; font-weight: 600; line-height: 1.75; }
+.service-item { display: grid; grid-template-columns: 300px minmax(0, 1fr); column-gap: 32px; align-items: baseline; }
+.service-item dt { font-size: 14px; font-weight: 600; line-height: 1.75; white-space: nowrap; }
 .service-item dd { margin: 0; font-size: 14px; line-height: 1.85; color: var(--secondary); }
 .publication-page { max-width: 960px; }
 .page-heading { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
@@ -141,6 +141,9 @@ p + p { margin-top: 16px; }
   .page-heading h1 { font-size: 32px; }
   .publication-meta { font-size: 12px; }
 
+}
+@media (max-width: 360px) {
+  .service-item dt { font-size: 13px; }
 }
 @media print {
   .site-header, .skip-link { display: none; }
